@@ -41,8 +41,8 @@
 
     <style>
         /* Custom scrollbar styling */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar { width: 8px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
@@ -64,6 +64,12 @@
 
         .fade-enter { opacity: 0; transform: translateY(10px); }
         .fade-enter-active { opacity: 1; transform: translateY(0); transition: opacity 400ms, transform 400ms; }
+        
+        /* Subtle scroll hint for mobile nav */
+        .scroll-hint-mask {
+            -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+            mask-image: linear-gradient(to right, black 90%, transparent 100%);
+        }
     </style>
 </head>
 <body class="bg-[#f8fafc]">
@@ -71,7 +77,7 @@
 
     <script type="text/babel" data-type="module">
         import { createRoot } from 'react-dom/client';
-        import React, { useState, useEffect } from 'react';
+        import React, { useState, useEffect, useRef } from 'react';
         import { 
             BookOpen, Users, BrainCircuit, Feather, ShieldAlert, Sparkles,
             Quote, Zap, Briefcase, ScrollText, HeartHandshake, Home, HelpCircle, 
@@ -289,15 +295,22 @@
 
             const [activeTab, setActiveTab] = useState('intro');
             const [isAnimating, setIsAnimating] = useState(false);
+            const navRef = useRef(null);
             
             // Interactive MCQ state
             const [answers, setAnswers] = useState({});
             const [score, setScore] = useState(null);
             const [showResults, setShowResults] = useState(false);
 
-            const handleTabSwitch = (tab) => {
+            const handleTabSwitch = (tab, e) => {
                 if(tab === activeTab) return;
                 setIsAnimating(true);
+                
+                // Scroll the clicked tab into view on mobile
+                if(e && e.target) {
+                    e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+
                 setTimeout(() => {
                     setActiveTab(tab);
                     setIsAnimating(false);
@@ -358,39 +371,50 @@
             return (
                 <div className="min-h-screen hero-pattern font-sans pb-24 transition-colors duration-300">
                     
-                    {/* Sticky Modern Header with Responsive Tab Grid */}
+                    {/* Sticky Modern Header with Refined Mobile Scroll Nav */}
                     <header className="sticky top-0 z-50 glass-panel shadow-sm border-b border-slate-200">
                         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4">
-                            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4">
                                 
                                 {/* Branding */}
-                                <div className="flex items-center gap-3">
-                                    <div className="bg-slate-800 text-white w-10 h-10 rounded-2xl flex items-center justify-center shadow-md shrink-0">
-                                        <BrainCircuit size={20} />
+                                <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
+                                    <div className="flex items-center gap-3">
+                                        <div className="bg-slate-800 text-white w-10 h-10 rounded-2xl flex items-center justify-center shadow-md shrink-0">
+                                            <BrainCircuit size={20} />
+                                        </div>
+                                        <div>
+                                            <h1 className="text-lg font-black text-slate-900 tracking-tight leading-none">Computational Linguistics</h1>
+                                            <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-1">Elattar</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h1 className="text-lg font-black text-slate-900 tracking-tight leading-none">Computational Linguistics</h1>
-                                        <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-1">Elattar</p>
+                                    
+                                    {/* Mobile Only Status Badge - Moves up on small screens */}
+                                    <div className="sm:hidden flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] px-2 py-1 rounded-full font-bold">
+                                        <Sparkles size={10} />
+                                        100%
                                     </div>
                                 </div>
 
-                                {/* Status Badge */}
-                                <div className="flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs px-3 py-1 rounded-full font-bold">
+                                {/* Desktop Status Badge */}
+                                <div className="hidden sm:flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs px-3 py-1 rounded-full font-bold">
                                     <Sparkles size={12} />
                                     100% Autistic
                                 </div>
                             </div>
 
                             {/* Responsive Tab Grid for perfect viewing on mobile/tablet/desktop */}
-                            <div className="relative mt-5">
-                                <div className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-nowrap p-1.5 bg-slate-100/90 rounded-2xl gap-2 relative z-0 shadow-inner">
+                            <div className="relative mt-4">
+                                <div 
+                                    ref={navRef}
+                                    className="flex overflow-x-auto no-scrollbar scroll-smooth snap-x p-1.5 bg-slate-100/90 rounded-2xl gap-2 relative z-0 shadow-inner items-center scroll-hint-mask"
+                                >
                                     {tabConfig.map((tab) => {
                                         const TabIcon = tab.icon;
                                         return (
                                             <button
                                                 key={tab.id}
-                                                onClick={() => handleTabSwitch(tab.id)}
-                                                className={`px-3 py-2.5 rounded-xl text-[11px] font-black uppercase tracking-wide transition-all duration-200 whitespace-nowrap flex items-center justify-center lg:justify-start gap-2 shrink-0 ${
+                                                onClick={(e) => handleTabSwitch(tab.id, e)}
+                                                className={`px-3 py-2.5 rounded-xl text-[11px] font-black uppercase tracking-wide transition-all duration-200 whitespace-nowrap flex items-center justify-center lg:justify-start gap-2 shrink-0 snap-start sm:snap-align-none ${
                                                     activeTab === tab.id 
                                                     ? `bg-white ${activeColors.accent} shadow-md ring-1 ring-black/5 scale-[1.02]` 
                                                     : 'text-slate-500 hover:text-slate-800 hover:bg-white/50'
@@ -526,7 +550,7 @@
                                             <ul className="list-disc pl-5 space-y-1 text-xs">
                                                 <li><strong>Word Occurrences:</strong> 12 separate word slots in the sentence.</li>
                                                 <li><strong>Wordforms:</strong> "return" and "returns" are two distinct wordforms; "book" and "books" are two distinct wordforms.</li>
-                                                <li><strong>Lexemes:</strong> The forms {"$\\{ \\text{book}, \\text{books} \\}$"} connect to the single dictionary entry <strong>BOOK</strong>; the forms {"$\\{ \\text{return}, \\text{returns} \\}$"} connect to the single dictionary entry <strong>RETURN</strong>.</li>
+                                                <li><strong>Lexemes:</strong> The forms { "{book, books}" } connect to the single dictionary entry <strong>BOOK</strong>; the forms { "{return, returns}" } connect to the single dictionary entry <strong>RETURN</strong>.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -549,7 +573,7 @@
                                             <li><strong>Word Boundaries:</strong> Compound words like "icebox" can be written as "icebox", "ice-box", or "ice box". Splitting them correctly is very difficult.</li>
                                             <li><strong>Noise Words:</strong> Fillers like "um" or short abbreviations must be found and sorted out.</li>
                                             <li><strong>Language Types:</strong> Space-based tokenization works well in English. However, languages like <strong>Chinese</strong> use no spaces between words. Highly complex languages like <strong>Turkish</strong> use massive words with many grammar endings representing whole sentences.</li>
-                                            <li><strong>Morpheme Tokenization:</strong> A <strong>morpheme</strong> is the smallest unit of language that carries meaning. Cutting words down into morphemes (such as {"\"longer\" $\\rightarrow$ \"long\" + \"-er\""}) helps computer systems understand word structures much better.</li>
+                                            <li><strong>Morpheme Tokenization:</strong> A <strong>morpheme</strong> is the smallest unit of language that carries meaning. Cutting words down into morphemes (such as "longer" → "long" + "-er") helps computer systems understand word structures much better.</li>
                                         </ul>
                                     </div>
                                     <Ar title="عملية التقطيع (Tokenization) والتحليل الصرفي">
@@ -739,7 +763,7 @@
                                         </div>
                                         <p><strong>Structural Breakdown:</strong></p>
                                         <ul className="list-disc pl-5 space-y-1 text-xs">
-                                            <li><strong>Syntax:</strong> Grammatically perfect. {"$[\\text{cows / Noun}] + $[\\text{flow / Verb}] + $[\\text{supremely / Adverb}]$"} matches standard English sentence templates.</li>
+                                            <li><strong>Syntax:</strong> Grammatically perfect. [cows / Noun] + [flow / Verb] + [supremely / Adverb] matches standard English sentence templates.</li>
                                             <li><strong>Semantics:</strong> Completely meaningless. Cows are solid animals; they cannot flow like water.</li>
                                         </ul>
                                         <p>Understanding semantics is one of the hardest problems in computer science because transcription systems are great at writing down typed words, but they still struggle to understand what those words actually mean.</p>
@@ -849,14 +873,14 @@
                                         <p><strong>Deep learning</strong> represents word meanings as <strong>vectors</strong> (long lists of numbers) inside a high-dimensional continuous grid called <strong>Semantic Space</strong>. Words with similar meanings are placed very close to each other inside this virtual space.</p>
                                         <p><strong>Key Concepts:</strong></p>
                                         <ul className="list-disc pl-5 space-y-2">
-                                            <li><strong>Visualization:</strong> High-dimensional word vectors can be flattened into simple {"$2\\text{D}$"} maps using smart math tools like <strong>PCA</strong> or <strong>t-SNE</strong> so we can look at them.</li>
-                                            <li><strong>Subword (Morpheme) Vectors:</strong> Instead of whole words, individual word pieces (morphemes) get their own vectors (e.g., splitting "undesirability" into {"$\\text{un} + \\text{desire} + \\text{able} + \\text{ity}$"}). Neural networks join these lists together to find the full word meaning.</li>
+                                            <li><strong>Visualization:</strong> High-dimensional word vectors can be flattened into simple 2D maps using smart math tools like <strong>PCA</strong> or <strong>t-SNE</strong> so we can look at them.</li>
+                                            <li><strong>Subword (Morpheme) Vectors:</strong> Instead of whole words, individual word pieces (morphemes) get their own vectors (e.g., splitting "undesirability" into ("un" + "desire" + "able" + "ity")). Neural networks join these lists together to find the full word meaning.</li>
                                             <li><strong>Contextual Tracking:</strong> Recurrent Neural Networks (RNNs) convert whole sentences into unified vectors. These vectors are then used to build automated translators, writing bots, and fast email auto-responders.</li>
                                         </ul>
                                     </div>
                                     <Ar title="التعلم العميق ومتجهات الفضاء الدلالي">
                                         يمثل <strong>التعلم العميق (Deep Learning)</strong> معاني الكلمات كمتجهات رقمية (Numerical Vectors) داخل فضاء متعدد الأبعاد (Semantic Space)؛ بحيث تتقارب معاني الكلمات المتشابهة في المسافات الرياضية. 
-                                        ويمكن تبسيط أبعاد هذا الفضاء لخرائط ثنائية الأبعاد {"($2\\text{D}$)"} برمجياً لمطالعتها عبر أدوات مثل PCA و t-SNE، كما تُعالج الجمل كمتجهات متكاملة لخدمة المحادثات الذكية.
+                                        ويمكن تبسيط أبعاد هذا الفضاء لخرائط ثنائية الأبعاد (2D) برمجياً لمطالعتها عبر أدوات مثل PCA و t-SNE، كما تُعالج الجمل كمتجهات متكاملة لخدمة المحادثات الذكية.
                                     </Ar>
                                 </Section>
 
@@ -900,9 +924,9 @@
                                         name="N-gram Language Models"
                                         definition="An N-gram is a sequence of N words in a row. An N-gram language model calculates the probability of a word appearing based on the previous N-1 words."
                                         explanation="This model helps a computer predict what word you will type next on a keyboard."
-                                        example="Bigram ($2$-gram): 'I love' -> predicts 'apples' with high probability. Trigram ($3$-gram): 'I love apples' -> predicts '.'"
+                                        example="Bigram (2-gram): 'I love' -> predicts 'apples' with high probability. Trigram (3-gram): 'I love apples' -> predicts '.'"
                                         arabicTitle="نماذج اللغات متعددة المقاطع (N-gram)"
-                                        arabicContent="متتالية من الكلمات بطول $N$، تُستعمل للتنبؤ بالكلمة التالية بناءً على الكلمات السابقة، وهي أساس لوحات المفاتيح الذكية."
+                                        arabicContent="متتالية من الكلمات بطول N، تُستعمل للتنبؤ بالكلمة التالية بناءً على الكلمات السابقة، وهي أساس لوحات المفاتيح الذكية."
                                         themeColor="purple"
                                     />
 
