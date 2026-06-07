@@ -306,33 +306,33 @@
             };
 
             const tabConfig = [
-                { id: 'intro', label: '1. Introduction & Structure', icon: ScrollText, color: 'rose' },
-                { id: 'apps', label: '2. Core Applications', icon: Briefcase, color: 'amber' },
+                { id: 'intro', label: '1. Intro & Structure', icon: ScrollText, color: 'rose' },
+                { id: 'apps', label: '2. Core Apps', icon: Briefcase, color: 'amber' },
                 { id: 'nlp', label: '3. NLP & Ambiguities', icon: ShieldAlert, color: 'emerald' },
-                { id: 'tech', label: '4. Tech & Deep Learning', icon: Network, color: 'blue' },
-                { id: 'lexicon', label: '5. Key Terms Lexicon', icon: BookOpen, color: 'purple' },
-                { id: 'quiz', label: '6. Practice Exam Hub', icon: BrainCircuit, color: 'indigo' },
+                { id: 'tech', label: '4. Deep Learning', icon: Network, color: 'blue' },
+                { id: 'lexicon', label: '5. Key Terms', icon: BookOpen, color: 'purple' },
+                { id: 'quiz', label: '6. Practice Exam', icon: BrainCircuit, color: 'indigo' },
             ];
 
             const activeColors = themeColors[activeTab] || themeColors.intro;
 
             // Interactive MCQ Questions & Correct Options
             const mcqQuestions = [
-                { id: 1, text: "Computational linguistics sits at the interdisciplinary intersection of which fields?", options: { a: "Linguistics, History, and Anthropology", b: "Linguistics, Computer Science, AI, and Cognitive Science", c: "Mathematics, Physics, and Mechanical Engineering", d: "Sociology, Psychology, and Media Studies" }, correct: "b", explanation: "As defined in the syllabus, computational linguistics is an interdisciplinary field combining linguistics, computer science, artificial intelligence, and cognitive science." },
-                { id: 2, text: "General linguistics is considered the 'nucleus' of the science. Its four major components are:", options: { a: "Dialectology, Sociolinguistics, Lexicography, and Typology", b: "Phonology, Morphology, Syntax, and Semantics/Pragmatics", c: "History, Comparison, Translation, and Writing", d: "Stemming, Parsing, Tokenization, and Embedding" }, correct: "b", explanation: "The structure of general linguistics is directly mapped to Phonology (speech sounds), Morphology (word pieces), Syntax (sentence structures), and Semantics/Pragmatics (meaning and intent)." },
-                { id: 3, text: "Which branch of linguistics classifies a variety of languages according to the similarity of their features, regardless of origin?", options: { a: "Comparative Linguistics", b: "Contrastive Linguistics (Linguistic Typology)", c: "Dialectology", d: "Sociolinguistics" }, correct: "b", explanation: "Contrastive linguistics, or linguistic typology, specifically groups and classifies languages based on feature similarities rather than genetic ancestral links." },
-                { id: 4, text: "If 'returned' and 'returning' belong to the same base set, that abstract base set is called a:", options: { a: "Token", b: "Wordform", c: "Lexeme", d: "Morpheme" }, correct: "c", explanation: "A lexeme is the abstract group of wordforms sharing the same base meaning (e.g. {return, returns, returned} belongs to the lexeme RETURN)." },
-                { id: 5, text: "What is the smallest unit of meaning in language?", options: { a: "Token", b: "Morpheme", c: "Lexeme", d: "Phoneme" }, correct: "b", explanation: "A morpheme is the smallest unit of meaning. For example, 'longer' has two morphemes: 'long' (base meaning) and '-er' (comparative marker)." },
-                { id: 6, text: "Which of the following describes the purpose of Retrieval-Augmented Generation (RAG)?", options: { a: "It translates audio files to textual representations in real time.", b: "It combines information retrieval with language generation by letting models search facts before responding.", c: "It replaces neural embeddings with a simple rule-based lookup database.", d: "It compresses the size of large corpora using lossy algorithms." }, correct: "b", explanation: "Retrieval-Augmented Generation (RAG) is a highly modern technique that retrieves relevant facts from a database first, then passes them to the LLM to generate an accurate, hallucination-free response." },
-                { id: 7, text: "Why is natural language processing (NLP) uniquely difficult for computers?", options: { a: "Computers do not support UTF-8 or Unicode characters.", b: "Language is complex, ambiguous, context-dependent, and symbols are represented as continuous signals in the brain.", c: "The rules of English grammar have not changed since classical antiquity.", d: "Programming languages like Python cannot handle string variables." }, correct: "b", explanation: "NLP is challenging because human language is infinitely generative, highly ambiguous, context-dependent, and represented in our neural pathways as continuous patterns despite being categorical." },
-                { id: 8, text: "A sentence that is syntactically valid but semantically invalid is:", options: { a: "'The dog went away.'", b: "'cows flow supremely'", c: "'The thief apartment the robbed.'", d: "'investigación' to 'investigation'" }, correct: "b", explanation: "'cows flow supremely' has a valid Subject-Verb-Adverb structure (syntactically correct) but makes zero logical sense (semantically incorrect)." },
-                { id: 9, text: "Constituency parsing breaks sentences down using what mechanism?", options: { a: "Directed dependency links between individual words", b: "Context-Free Grammars (CFGs) to create hierarchical groupings (like Noun Phrases and Verb Phrases)", c: "Reducing all words to their roots via the Porter algorithm", d: "Replacing lexical items with vector lists of floating-point numbers" }, correct: "b", explanation: "Constituency parsing uses Context-Free Grammars (CFGs) to group words into structural phrases (constituents) like NP and VP, resulting in a hierarchical parse tree." },
-                { id: 10, text: "In the sentence 'John gave Mary a book', what is the semantic role (SRL) of 'Mary'?", options: { a: "Agent", b: "Theme", c: "Recipient", d: "Modifier" }, correct: "c", explanation: "In Semantic Role Labeling, 'John' is the Agent (actor), 'book' is the Theme (object), and 'Mary' is the Recipient (the receiver of the action)." },
-                { id: 11, text: "Which transformer model was designed primarily with language understanding (reads text in both directions) as its main goal?", options: { a: "GPT", b: "BERT", c: "T5", d: "LSTM" }, correct: "b", explanation: "BERT (Bidirectional Encoder Representations from Transformers) is bidirectional and designed specifically for deep contextual language understanding." },
-                { id: 12, text: "Which transformer model treats every task (translation, summarization, etc.) as a text-to-text problem?", options: { a: "BERT", b: "GPT", c: "T5", d: "RNN" }, correct: "c", explanation: "T5 (Text-to-Text Transfer Transformer) is a unified framework that translates every NLP task into a text-to-text format." },
-                { id: 13, text: "What stemming algorithm from 1979 remains the industry standard for removing word endings?", options: { a: "The Chomsky Hierarchy", b: "The Porter Stemming Algorithm", c: "The McParseface Neural Parser", d: "The Markov Chain Model" }, correct: "b", explanation: "The Porter stemming algorithm, developed by Martin Porter in 1979, is the foundational and most widely used algorithm for stemming." },
-                { id: 14, text: "Coreference resolution is responsible for:", options: { a: "Converting audio waves to spectral features", b: "Determining if words (like a pronoun and a noun) refer to the same real-world entity", c: "Translating words sequentially from left to right", d: "Assigning Part-of-Speech tags to text" }, correct: "b", explanation: "Coreference resolution links related words in a discourse together, determining that 'She' refers to 'Alice' or 'the city' refers to 'Paris'." },
-                { id: 15, text: "What is the primary function of Automatic Speech Recognition (ASR)?", options: { a: "To convert written text into spoken voice synthetically", b: "To translate speech into a foreign language without transcripts", c: "To convert audio signals of spoken language into written text", d: "To extract emotional sentiment from social media posts" }, correct: "c", explanation: "ASR translates spoken audio signals directly into corresponding text characters (speech-to-text)." }
+                { id: 1, text: "Computational linguistics sits at the crossroads of which fields?", options: { a: "Linguistics, History, and Anthropology", b: "Linguistics, Computer Science, AI, and Brain Science", c: "Mathematics, Physics, and Engineering", d: "Sociology, Psychology, and Media" }, correct: "b", explanation: "Computational linguistics is a mixed field combining language study (linguistics), computer science, artificial intelligence, and brain science (cognitive science)." },
+                { id: 2, text: "General linguistics is the center of language science. What are its four main parts?", options: { a: "Dialects, Social Factors, Dictionaries, and Types of Language", b: "Sounds (Phonology), Word Pieces (Morphology), Grammar Rules (Syntax), and Meanings/Context (Semantics/Pragmatics)", c: "History, Comparisons, Translation, and Writing systems", d: "Word Roots, Tree Structures, Text Cutting, and Vector Lists" }, correct: "b", explanation: "The four main parts of general linguistics are Phonology (study of sounds), Morphology (word structure), Syntax (sentence layout), and Semantics/Pragmatics (meaning and context)." },
+                { id: 3, text: "Which language study groups different languages based on similar features, regardless of their family history?", options: { a: "Comparative Linguistics", b: "Contrastive Linguistics (Linguistic Typology)", c: "Dialectology", d: "Sociolinguistics" }, correct: "b", explanation: "Contrastive linguistics (or linguistic typology) groups and classifies different languages together based on shared features, instead of their ancestral roots." },
+                { id: 4, text: "If 'returned' and 'returning' belong to the same base word family, that base family is called a:", options: { a: "Token", b: "Wordform", c: "Lexeme", d: "Morpheme" }, correct: "c", explanation: "A lexeme is the abstract family group of different spelling shapes that all share the same basic dictionary meaning (like how the lexeme RETURN covers 'returned' and 'returning')." },
+                { id: 5, text: "What is the smallest unit of meaning in human language?", options: { a: "Token", b: "Morpheme", c: "Lexeme", d: "Phoneme" }, correct: "b", explanation: "A morpheme is the smallest unit with active meaning. For example, 'longer' has two morphemes: 'long' (base word) and '-er' (the grammar ending meaning 'more')." },
+                { id: 6, text: "Which of the following describes the purpose of Retrieval-Augmented Generation (RAG)?", options: { a: "It records audio files into written texts instantly.", b: "It lets an AI search a factual database for correct information before writing its final answer.", c: "It replaces lists of numbers with simple word-for-word translation rules.", d: "It shrinks the file size of massive digital libraries using lossy tools." }, correct: "b", explanation: "Retrieval-Augmented Generation (RAG) is a modern method where an AI searches an external database of true facts first, then uses that found information to write a correct, hallucination-free answer." },
+                { id: 7, text: "Why is natural language processing (NLP) uniquely difficult for computer systems?", options: { a: "Computers do not support modern text encoding systems like UTF-8.", b: "Language is complex, has many meanings, depends on situation, and is processed in our brains as continuous signals.", c: "The grammar rules of English have not changed since ancient times.", d: "Computer program languages like Python cannot handle word strings." }, correct: "b", explanation: "NLP is very difficult because human language has endless ways to build sentences, words often have multiple meanings, meaning depends heavily on context, and our brains process these words as continuous physical signals." },
+                { id: 8, text: "A sentence that has perfect grammar rules but makes zero logical sense is:", options: { a: "'The dog went away.'", b: "'cows flow supremely'", c: "'The thief apartment the robbed.'", d: "'investigación' to 'investigation'" }, correct: "b", explanation: "'cows flow supremely' follows proper grammar layout (Subject-Verb-Adverb) but is logically meaningless, because cows are solid objects and cannot flow like water." },
+                { id: 9, text: "How does constituency parsing break sentences down?", options: { a: "By drawing straight pointer arrows between individual words", b: "By grouping words into nested phrases (like Noun Phrases and Verb Phrases) using grammar structures", c: "By cutting word endings off using the Porter algorithm", d: "By translating words into continuous lists of floating-point numbers" }, correct: "b", explanation: "Constituency parsing groups words together into larger structural chunks (like Noun Phrases and Verb Phrases) to draw a branching sentence tree." },
+                { id: 10, text: "In the sentence 'John gave Mary a book', what is the role (Semantic Role) of 'Mary'?", options: { a: "Agent (the actor)", b: "Theme (the object)", c: "Recipient (the receiver)", d: "Modifier (the helper)" }, correct: "c", explanation: "In Semantic Role Labeling, 'John' is the Agent (who did it), 'book' is the Theme (what was moved), and 'Mary' is the Recipient (who received it)." },
+                { id: 11, text: "Which transformer model was designed to read text in both directions to deeply understand word context?", options: { a: "GPT", b: "BERT", c: "T5", d: "LSTM" }, correct: "b", explanation: "BERT reads text bidirectionally (left-to-right and right-to-left at the same time) so it can understand the exact contextual meaning of words." },
+                { id: 12, text: "Which transformer model treats all different language tasks (like translation or summarizing) as a text-in, text-out problem?", options: { a: "BERT", b: "GPT", c: "T5", d: "RNN" }, correct: "c", explanation: "T5 (Text-to-Text Transfer Transformer) is built on a unified framework where every input and output is formatted as a text string." },
+                { id: 13, text: "What classic formula from 1979 remains the standard tool for cutting off word endings?", options: { a: "The Chomsky Tree Hierarchy", b: "The Porter Stemming Algorithm", c: "The Neural Parsing Assistant", d: "The Markov Chain Model" }, correct: "b", explanation: "The Porter Stemming Algorithm, written by Martin Porter in 1979, is the foundational and most popular tool used to strip word endings." },
+                { id: 14, text: "What is the job of coreference resolution?", options: { a: "Turning sound waves into clear digital audio numbers", b: "Working out when different words (like a pronoun and a name) mean the exact same real-world entity", c: "Translating words one-by-one from left to right", d: "Assigning Part-of-Speech tags to text" }, correct: "b", explanation: "Coreference resolution links related words together in a story, letting the computer know that the pronoun 'She' refers to the name 'Alice'." },
+                { id: 15, text: "What is the primary function of Automatic Speech Recognition (ASR)?", options: { a: "Converting written text into a spoken human voice", b: "Translating speech into another language without writing anything down", c: "Converting recorded spoken voice audio into written text", d: "Analyzing the mood of social media posts" }, correct: "c", explanation: "ASR is speech-to-text technology that takes recorded audio waves of people speaking and converts them into written text characters." }
             ];
 
             const handleAnswerSelect = (qId, optionKey) => {
@@ -358,7 +358,7 @@
             return (
                 <div className="min-h-screen hero-pattern font-sans pb-24 transition-colors duration-300">
                     
-                    {/* Sticky Modern Header */}
+                    {/* Sticky Modern Header with Responsive Tab Grid */}
                     <header className="sticky top-0 z-50 glass-panel shadow-sm border-b border-slate-200">
                         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4">
                             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -374,29 +374,29 @@
                                     </div>
                                 </div>
 
-                                {/* Custom Status Badge */}
-                                <div className="hidden md:flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs px-3 py-1 rounded-full font-bold">
+                                {/* Status Badge */}
+                                <div className="flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs px-3 py-1 rounded-full font-bold">
                                     <Sparkles size={12} />
                                     100% Autistic
                                 </div>
                             </div>
 
-                            {/* Dynamic Scrollable Navigation Strip */}
-                            <div className="relative mt-4">
-                                <div className="flex flex-nowrap p-1 bg-slate-100/80 rounded-2xl overflow-x-auto no-scrollbar gap-1 relative z-0">
+                            {/* Responsive Tab Grid for perfect viewing on mobile/tablet/desktop */}
+                            <div className="relative mt-5">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-nowrap p-1.5 bg-slate-100/90 rounded-2xl gap-2 relative z-0 shadow-inner">
                                     {tabConfig.map((tab) => {
                                         const TabIcon = tab.icon;
                                         return (
                                             <button
                                                 key={tab.id}
                                                 onClick={() => handleTabSwitch(tab.id)}
-                                                className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wide transition-all duration-250 whitespace-nowrap flex items-center gap-2 shrink-0 ${
+                                                className={`px-3 py-2.5 rounded-xl text-[11px] font-black uppercase tracking-wide transition-all duration-200 whitespace-nowrap flex items-center justify-center lg:justify-start gap-2 shrink-0 ${
                                                     activeTab === tab.id 
-                                                    ? `bg-white ${activeColors.accent} shadow-sm ring-1 ring-black/5` 
-                                                    : 'text-slate-500 hover:text-slate-855'
+                                                    ? `bg-white ${activeColors.accent} shadow-md ring-1 ring-black/5 scale-[1.02]` 
+                                                    : 'text-slate-500 hover:text-slate-800 hover:bg-white/50'
                                                 }`}
                                             >
-                                                <TabIcon size={14} />
+                                                <TabIcon size={13} />
                                                 {tab.label}
                                             </button>
                                         );
@@ -425,57 +425,57 @@
                                     <div className="md:w-3/4 text-center md:text-left space-y-1">
                                         <h2 className="text-xl font-black text-slate-900">1. Introduction to Computational Linguistics</h2>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            Core definitions, historical context, structural linguistics, and the foundational elements of natural language data processing.
+                                            A very clear look at basic definitions, history, word categories, sentence analysis, and how computers prepare language files.
                                         </p>
                                     </div>
                                 </div>
 
-                                <Section title="What is Computational Linguistics?" subtitle="Definition and Scope" icon={Feather} color="rose">
+                                <Section title="What is Computational Linguistics?" subtitle="Simple Definition and Scope" icon={Feather} color="rose">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p><strong>Computational Linguistics</strong> is an interdisciplinary field that combines <strong>linguistics</strong>, <strong>computer science</strong>, <strong>artificial intelligence</strong>, and <strong>cognitive science</strong> to study and model human language using computational methods.</p>
-                                        <p>At its core, the discipline seeks to answer two fundamental questions:</p>
+                                        <p><strong>Computational Linguistics</strong> is a mixed field that combines <strong>linguistics</strong> (study of language), <strong>computer science</strong>, <strong>artificial intelligence (AI)</strong>, and <strong>cognitive science</strong> (brain science). It uses computer programs to analyze, understand, and produce human speech and writing.</p>
+                                        <p>At its core, this discipline seeks to answer two very simple questions:</p>
                                         <ul className="list-disc pl-5 space-y-1 font-semibold text-slate-800">
-                                            <li>How can computers process and understand human language?</li>
-                                            <li>How can computational tools help us analyze linguistic phenomena more effectively?</li>
+                                            <li>How can computers read, process, and understand human language?</li>
+                                            <li>How can we use computer tools to study and understand how languages work?</li>
                                         </ul>
-                                        <p>This subject represents a crucial bridge between theoretical knowledge of language and practical technological applications:</p>
+                                        <p>This subject links theoretical language research with practical real-world technology:</p>
                                         <ul className="list-decimal pl-5 space-y-2">
-                                            <li><strong>On the theoretical side:</strong> It involves developing formal models of syntax, semantics, and pragmatics, allowing computers to systematically represent and manipulate linguistic structures.</li>
-                                            <li><strong>On the applied side:</strong> It underpins technologies such as machine translation, speech recognition, sentiment analysis, chatbots, search engines, and text-to-speech systems.</li>
+                                            <li><strong>On the theory side:</strong> It builds clear mathematical and rule-based structures to explain how sentences, word meanings, and situations work inside a computer's memory.</li>
+                                            <li><strong>On the practical side:</strong> It serves as the foundation for daily technology like automated translators, voice search assistants, automated sentiment scanners, online chatbots, search engines, and computer reading voices.</li>
                                         </ul>
-                                        <p>By testing hypotheses about language through computational models, researchers gain invaluable insights into how humans acquire, process, and use language.</p>
+                                        <p>By testing language theories inside computer models, researchers can easily understand how the human brain learns, stores, and speaks language.</p>
                                     </div>
                                     <Ar title="تعريف علم اللغويات الحاسوبية ومجاله">
-                                        <strong>اللغويات الحاسوبية (Computational Linguistics)</strong> هو تخصص بيني يدمج بين علم اللغويات، علوم الحاسوب، الذكاء الاصطناعي، والعلوم المعرفية لدراسة ونمذجة اللغة البشرية حاسوبياً.
+                                        <strong>اللغويات الحاسوبية (Computational Linguistics)</strong> هو تخصص يجمع بين دراسة اللغات البشرية وعلوم الحاسوب والذكاء الاصطناعي لفهم كيفية معالجة البرامج للغة البشرية وتوليدها.
                                         <br/><br/>
                                         <strong>ينقسم هذا العلم إلى شقين أساسيين:</strong>
                                         <ul className="list-disc pr-5 mt-2 space-y-1">
-                                            <li><strong>الجانب النظري (Theoretical):</strong> يركز على صياغة نماذج رياضية ومنطقية لبنية اللغة وقواعدها (بناء الجمل، المعاني، والسياق) لتمثيلها في ذاكرة الحاسوب.</li>
-                                            <li><strong>الجانب التطبيقي (Applied):</strong> يمثل المحرك الأساسي لتطبيقات الترجمة الآلية، معالجة الصوت، محركات البحث، وأنظمة المساعدة الذكية مثل Siri وGoogle Translate.</li>
+                                            <li><strong>الجانب النظري (Theoretical):</strong> صياغة نماذج رياضية ومنطقية لبنية اللغة وقواعدها لتمثيلها في ذاكرة الحاسوب بشكل دقيق.</li>
+                                            <li><strong>الجانب التطبيقي (Applied):</strong> بناء وتطوير الأنظمة التي نستخدمها يومياً مثل الترجمة الفورية، المساعد الذكي، ومحركات البحث.</li>
                                         </ul>
                                     </Ar>
                                 </Section>
 
-                                <Section title="Linguistics and its Structure" subtitle="The Nuclear Tree of Linguistic Sciences" icon={Network} color="rose">
+                                <Section title="Linguistics and its Structure" subtitle="The Branches of Language Science" icon={Network} color="rose">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p><strong>Linguistics</strong> is the scientific study of natural languages, comprising several highly specialized branches of science centered around <strong>General Linguistics</strong> as the nucleus:</p>
+                                        <p><strong>Linguistics</strong> is the formal scientific study of language. It is made of several specialized branches, centered around <strong>General Linguistics</strong> as the core nucleus:</p>
                                         
                                         <div className="bg-slate-50 border rounded-2xl p-5 space-y-3 font-mono text-xs text-slate-800">
-                                            <div className="font-bold border-b pb-2 text-slate-900">General Linguistics Nucleus:</div>
-                                            <p><strong>1. Phonology:</strong> Deals with speech sounds, identifying similarities and differences that build and distinguish words.</p>
-                                            <p><strong>2. Morphology:</strong> Studies the inner structure of individual words and the laws of creating new words from basic pieces (morphs/morphemes).</p>
-                                            <p><strong>3. Syntax:</strong> Considers the structural composition of sentences and the grammatical rules connecting words.</p>
-                                            <p><strong>4. Semantics & Pragmatics:</strong> Semantics studies the meaning of words and texts; Pragmatics studies situational context and intent behind language production.</p>
+                                            <div className="font-bold border-b pb-2 text-slate-900">General Linguistics Core Nucleus:</div>
+                                            <p><strong>1. Phonology:</strong> Studies speech sounds, finding the small sound differences that separate one word from another.</p>
+                                            <p><strong>2. Morphology:</strong> Studies the internal structure of words. It shows how words are created by combining smaller pieces of meaning called morphemes.</p>
+                                            <p><strong>3. Syntax:</strong> Studies sentence layout. It looks at the grammar rules that connect words to build complete, correct sentences.</p>
+                                            <p><strong>4. Semantics & Pragmatics:</strong> Semantics is the study of word and text meanings. Pragmatics is the study of real-world context and the speaker's true intent.</p>
                                         </div>
 
                                         <p><strong>Other Key Branches of Linguistics:</strong></p>
                                         <ul className="list-disc pl-5 space-y-2">
-                                            <li><strong>Historical / Comparative Linguistics:</strong> Investigates linguistic history, ancestral relationships, and structural evolution across families (Romance, Germanic, Slavonic Families). Comparison allows for predicting elements of one language from another.</li>
-                                            <li><strong>Contrastive Linguistics / Typology:</strong> Classifies languages based on shared structural features regardless of their genetic origin.</li>
-                                            <li><strong>Sociolinguistics & Dialectology:</strong> Sociolinguistics studies language variations across social strata. Dialectology compares regional dialects across the space axis.</li>
-                                            <li><strong>Lexicography:</strong> Studies the lexicon and designs methods to compile comprehensive dictionaries.</li>
-                                            <li><strong>Psycholinguistics & Mathematical Linguistics:</strong> Psycholinguistics runs experiments on cognitive language behavior. Mathematical linguistics focuses on formal generative grammars.</li>
-                                            <li><strong>Applied Linguistics:</strong> Deploys general linguistic ideas into broad, real-world human practice.</li>
+                                            <li><strong>Historical / Comparative Linguistics:</strong> Studies language history, family trees, and how grammar rules evolve over time (e.g., how Spanish and French evolved from Latin). Comparing words lets us predict how translation words will look.</li>
+                                            <li><strong>Contrastive Linguistics / Typology:</strong> Groups different world languages together based on shared grammar traits, regardless of their family history.</li>
+                                            <li><strong>Sociolinguistics & Dialectology:</strong> Sociolinguistics studies how social class changes how people speak. Dialectology compares regional accents and dialects based on maps.</li>
+                                            <li><strong>Lexicography:</strong> The study of vocabulary and the design of dictionaries.</li>
+                                            <li><strong>Psycholinguistics & Mathematical Linguistics:</strong> Psycholinguistics does experiments on how our brains handle language. Mathematical linguistics focuses on formal algebraic grammar structures.</li>
+                                            <li><strong>Applied Linguistics:</strong> Takes general linguistic ideas and uses them in practical fields, like teaching languages to students.</li>
                                         </ul>
 
                                         {/* Linguistic Typology Example Table */}
@@ -505,67 +505,56 @@
                                         </div>
                                     </div>
                                     <Ar title="هيكل علم اللغويات وفروعه">
-                                        <strong>علم اللغويات العام (General Linguistics)</strong> هو النواة المركزية ويتفرع إلى:
-                                        <ul className="list-disc pr-5 mt-2 space-y-1">
-                                            <li><strong>الصوتيات (Phonology):</strong> دراسة أصوات الكلام وتمييز الحروف.</li>
-                                            <li><strong>الصرف (Morphology):</strong> بنية الكلمة الفردية وطرق تكوينها من وحدات دلالية صغيرة تسمى (Morphs).</li>
-                                            <li><strong>النحو (Syntax):</strong> صياغة وبناء الجمل والعلاقات الإعرابية والتركيبية بين الكلمات.</li>
-                                            <li><strong>الدلالة والبراجماتية (Semantics & Pragmatics):</strong> دراسة المعاني والمنطق (الدلالة) والسياق والمقاصد البشرية وراء النصوص (البراجماتية).</li>
-                                        </ul>
-                                        <strong>اللغويات التاريخية والمقارنة:</strong> تبحث أصول اللغات وعلاقتها ببعضها (مثل اشتقاق اللغات الرومانسية كالإسبانية والفرنسية من اللاتينية). ويتيح لنا منهج التناظر اللغوي التنبؤ بالكلمات (مثل التناظر بين الكلمات الإسبانية المنتهية بـ ción والإنجليزية المنتهية بـ tion).
+                                        <strong>علم اللغويات العام (General Linguistics)</strong> هو الأساس ويتفرع إلى دراسة الأصوات (Phonology)، الصرف وبنية الكلمة (Morphology)، النحو والتركيب (Syntax)، والدلالة والسياق الاجتماعي والمقاصد (Semantics & Pragmatics).
+                                        <br/><br/>
+                                        <strong>فروع أخرى مهمة:</strong> اللغويات التاريخية والمقارنة لدراسة أصول اللغات وعلاقتها، ولغويات التناظر للتنبؤ بالألفاظ (مثل الكلمات المنتهية بـ ción بالإسبانية التي تقابل tion بالإنجليزية)، بالإضافة إلى لغويات المعاجم وعلم النفس اللغوي.
                                     </Ar>
                                 </Section>
 
                                 <Section title="Defining a Word: Word, Occurrence, Wordform, & Lexeme" icon={Users} color="rose">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p>The term "word" is highly ambiguous in scientific linguistics. To process text accurately, computational models must distinguish between three distinct concepts:</p>
+                                        <p>The term "word" is highly confusing in science. To count and analyze text correctly, computer models must separate "word" into three distinct concepts:</p>
                                         <ol className="list-decimal pl-5 space-y-3">
-                                            <li><strong>Word Occurrence:</strong> A word located in a specific place in a sentence. Every appearance is counted separately.</li>
-                                            <li><strong>Wordform:</strong> The actual physical shape of a word without considering its syntactic position (e.g., "book" and "books" are two distinct wordforms).</li>
-                                            <li><strong>Lexeme:</strong> An abstract group of wordforms sharing the same semantic core meaning. Represented in dictionaries by a standard lemma (base form).</li>
+                                            <li><strong>Word Occurrence:</strong> A word located in a specific spot in a sentence. Every single time it is typed, it counts as a separate occurrence.</li>
+                                            <li><strong>Wordform:</strong> The actual physical spelling shape of a word, ignored of where it sits in a sentence (e.g., "dog" and "dogs" are two different wordforms because their spelling is different).</li>
+                                            <li><strong>Lexeme:</strong> An abstract family of wordforms that share the same basic dictionary meaning. A standard base word (lemma) represents the lexeme in a dictionary.</li>
                                         </ol>
 
                                         <div className="bg-rose-50/40 border border-rose-100 rounded-2xl p-5 space-y-2">
                                             <p className="font-bold text-rose-950">Sentence Example for Analysis:</p>
                                             <p className="italic font-serif text-slate-800 text-md">"I return the books today, but she returns the book now."</p>
                                             <ul className="list-disc pl-5 space-y-1 text-xs">
-                                                <li><strong>Word Occurrences:</strong> 12 substrings.</li>
-                                                <li><strong>Wordforms:</strong> "return" and "returns" are two wordforms; "book" and "books" are two wordforms.</li>
-                                                <li><strong>Lexemes:</strong> {`{book, books}`} map to the single lexeme <strong>BOOK</strong>; {`{return, returns}`} map to the single lexeme <strong>RETURN</strong>.</li>
+                                                <li><strong>Word Occurrences:</strong> 12 separate word slots in the sentence.</li>
+                                                <li><strong>Wordforms:</strong> "return" and "returns" are two distinct wordforms; "book" and "books" are two distinct wordforms.</li>
+                                                <li><strong>Lexemes:</strong> The forms {"$\\{ \\text{book}, \\text{books} \\}$"} connect to the single dictionary entry <strong>BOOK</strong>; the forms {"$\\{ \\text{return}, \\text{returns} \\}$"} connect to the single dictionary entry <strong>RETURN</strong>.</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <Ar title="تفكيك مفهوم الكلمة: الحدث، الصيغة، والكلمة المعجمية">
-                                        كلمة "الكلمة" غامضة حاسوبياً، لذا قسّمها اللغويون لثلاثة مستويات لضبط الحسابات:
+                                        لتفادي غموض كلمة "كلمة" حاسوبياً، نستخدم ثلاثة مصطلحات دقيقة:
                                         <ul className="list-disc pr-5 mt-2 space-y-1">
-                                            <li><strong>الحدث اللفظي (Word Occurrence):</strong> الكلمة بموقعها المحدد في الجملة (لو تكررت الكلمة 5 مرات، تُحسب كـ 5 أحداث لفظية منفصلة).</li>
-                                            <li><strong>صيغة الكلمة (Wordform):</strong> الشكل المادي المكتوب للكلمة (مثال: book وصيغة الجمع books هما صيغتان مختلفتان ماديّاً).</li>
-                                            <li><strong>الكلمة المعجمية (Lexeme):</strong> المفهوم المجرد الذي يجمع الصيغ المختلفة (مثال: الصيغتان book و books تنتميان لنفس الأصل المعجمي وهو BOOK). المعاجم تعتمد فقط على الـ Lexeme كمدخل رئيسي لها.</li>
+                                            <li><strong>الحدث اللفظي (Word Occurrence):</strong> الكلمة بموقعها المحدد (كل تكرار في الجملة يُحسب بشكل مستقل).</li>
+                                            <li><strong>صيغة الكلمة (Wordform):</strong> الشكل الإملائي المكتوب (مثل book و books صيغتان مختلفتان).</li>
+                                            <li><strong>الكلمة المعجمية (Lexeme):</strong> الأصل المجرد في المعاجم الذي يجمع الصيغ المختلفة (فالأصل هو BOOK).</li>
                                         </ul>
                                     </Ar>
                                 </Section>
 
                                 <Section title="Tokenization & Morphology" icon={Briefcase} color="rose">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p><strong>Tokenization</strong> is the foundational pre-processing step in NLP. It is the process of breaking running text into individual units called <strong>tokens</strong> (words, punctuation, or subwords).</p>
-                                        <p><strong>The Core Challenge:</strong> Computers do not inherently understand human words; they only see strings of characters. Tokenization splits text systematically using character systems like Unicode to handle multilingual symbols correctly.</p>
-                                        <p><strong>Linguistic Ambiguities in Tokenization:</strong></p>
+                                        <p><strong>Tokenization</strong> is the very first step in preparing text. It is the process of breaking continuous text into small, individual pieces called <strong>tokens</strong> (such as words, punctuation marks, or word parts).</p>
+                                        <p><strong>The Core Challenge:</strong> Computers do not naturally understand human words. They only see lines of text characters. Tokenization uses digital systems like Unicode to handle different letters and symbols correctly.</p>
+                                        <p><strong>Linguistic Obstacles in Tokenization:</strong></p>
                                         <ul className="list-disc pl-5 space-y-2">
-                                            <li><strong>Hyphens and Boundaries:</strong> Words like "icebox" can be written as "icebox", "ice-box", or "ice box". Deciding whether to split them is a difficult parsing task.</li>
-                                            <li><strong>Interjections and Noise:</strong> Fillers like "um" or abbreviations must be identified and categorized.</li>
-                                            <li><strong>Typological Barriers:</strong> In English, space-separated tokenization works relatively well. However, in <strong>Chinese</strong> there are no spaces between words. In highly morphologically rich languages like <strong>Turkish</strong>, words are extremely long and contain multiple nested suffixes representing complete sentences.</li>
-                                            <li><strong>Morphemic Tokenization:</strong> A <strong>morpheme</strong> is the smallest unit of meaning in language. Tokenizers often split words into constituent morphemes (e.g., "longer" $\rightarrow$ "long" + "-er") to assist down-stream systems in semantic mapping.</li>
+                                            <li><strong>Word Boundaries:</strong> Compound words like "icebox" can be written as "icebox", "ice-box", or "ice box". Splitting them correctly is very difficult.</li>
+                                            <li><strong>Noise Words:</strong> Fillers like "um" or short abbreviations must be found and sorted out.</li>
+                                            <li><strong>Language Types:</strong> Space-based tokenization works well in English. However, languages like <strong>Chinese</strong> use no spaces between words. Highly complex languages like <strong>Turkish</strong> use massive words with many grammar endings representing whole sentences.</li>
+                                            <li><strong>Morpheme Tokenization:</strong> A <strong>morpheme</strong> is the smallest unit of language that carries meaning. Cutting words down into morphemes (such as {"\"longer\" $\\rightarrow$ \"long\" + \"-er\""}) helps computer systems understand word structures much better.</li>
                                         </ul>
                                     </div>
                                     <Ar title="عملية التقطيع (Tokenization) والتحليل الصرفي">
-                                        <strong>عملية التقطيع (Tokenization):</strong> هي الخطوة التمهيدية الأولى لمعالجة النصوص، وتعني تقسيم النص الطويل إلى وحدات صغيرة تسمى رموزاً أو مقاطع (Tokens).
-                                        <br/><br/>
-                                        <strong>أهم تحديات التقطيع لغوياً:</strong>
-                                        <ul className="list-disc pr-5 mt-2 space-y-1">
-                                            <li><strong>الحدود المشتركة:</strong> كلمات مثل "ice-box" أو "icebox" تحير الحاسوب هل يعاملها كرمز واحد أم رمزين.</li>
-                                            <li><strong>اللغات بلا مسافات:</strong> مثل اللغة الصينية التي تُكتب كحروف متصلة دون مسافات، واللغات الإلصاقية كاللغة التركية حيث يمكن لكلمة واحدة طويلة أن تحتوي على فاعل وفعل ومفعول به.</li>
-                                            <li><strong>المورفيمات (Morphemes):</strong> المورفيم هو أصغر وحدة تحمل معنى في اللغة (مثل تقسيم كلمة "longer" إلى المورفيم "long" ومورفيم المقارنة "er") لتسهيل معالجتها.</li>
-                                        </ul>
+                                        <strong>التقطيع (Tokenization):</strong> هو الخطوة التمهيدية لتقسيم النص لرموز أصغر (Tokens). 
+                                        تكمن صعوبته في معالجة الكلمات المركبة مثل "ice-box"، وفي اللغات التي لا تستخدم مسافات كالصينية، أو اللغات ذات التركيبات الطويلة كالتركية. المورفيم (Morpheme) هو أصغر وحدة تحمل معنى لربط الكلمة بجذرها الصرفي.
                                     </Ar>
                                 </Section>
 
@@ -587,80 +576,80 @@
                                     <div className="md:w-3/4 text-center md:text-left space-y-1">
                                         <h2 className="text-xl font-black text-slate-900">2. Main Applications of Computational Linguistics</h2>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            A detailed exploration of the ten core technological applications transforming human-computer communication and research.
+                                            An easy-to-read list of the ten essential technologies that let humans and computers talk, translate, and work together.
                                         </p>
                                     </div>
                                 </div>
 
-                                <Section title="The 10 Crucial Applications" subtitle="Real-world technologies powered by CL" icon={Sparkles} color="amber">
+                                <Section title="The 10 Crucial Applications" subtitle="Real-world technology made simple" icon={Sparkles} color="amber">
                                     <div className="space-y-6 text-sm leading-relaxed text-slate-700">
                                         
                                         <div className="space-y-4">
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">1. Machine Translation (MT)</h4>
-                                                <p className="text-slate-600 mt-1">Converts text across languages. Modern systems like Google Translate and DeepL rely on neural networks and statistical methods to improve fluency, abandoning old rule-based lookup tables. (e.g., translating critical medical files dynamically to support global healthcare).</p>
+                                                <p className="text-slate-600 mt-1">Converts text from one language to another. Modern systems like Google Translate use artificial neural networks to write fluent sentences, abandoning old word-for-word translation rules (e.g., instantly translating medical records for emergency doctors worldwide).</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">2. Speech Recognition & Synthesis</h4>
-                                                <p className="text-slate-600 mt-1">Speech-to-text and text-to-speech technologies used in virtual assistants (Siri, Alexa, Google Assistant). Speech recognition manages dialects, accents, and context, while speech synthesis ensures natural rhythm (prosody). (e.g., auto-captioning lectures for hearing-impaired students).</p>
+                                                <p className="text-slate-600 mt-1">Speech-to-text turns spoken voice into written text, while text-to-speech reads text in a natural rhythm. This powers smart home assistants like Siri and Alexa (e.g., writing subtitles in real-time for students who cannot hear well).</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">3. Sentiment Analysis & Opinion Mining</h4>
-                                                <p className="text-slate-600 mt-1">Determines the emotional tone or attitude of text (positive, negative, neutral) by analyzing vocabulary cues, emoticons, and semantic structure. (e.g., companies analyzing Twitter posts to evaluate public response to a product launch).</p>
+                                                <p className="text-slate-600 mt-1">Calculates the emotional tone of text (positive, negative, or neutral) by scanning word meanings, punctuation, and icons (e.g., companies checking thousands of internet reviews to see if people like their new phone).</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">4. Information Retrieval & Search Engines</h4>
-                                                <p className="text-slate-600 mt-1">Powers keyword and semantic search. Algorithms analyze user intent and underlying meaning instead of just literal character matches. (e.g., searching "best diet for heart health" returns semantic results on cardiovascular nutrition).</p>
+                                                <p className="text-slate-600 mt-1">Powers keyword and semantic searching. Modern search engines analyze what you actually want to find, instead of just matching the exact letters you typed in.</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">5. Corpus Linguistics & Language Modeling</h4>
-                                                <p className="text-slate-600 mt-1">Analyzes massive text databases (corpora) computationally to track grammar, vocabulary patterns, and language changes over time. (e.g., creating frequency word lists to design improved ESL teaching materials).</p>
+                                                <p className="text-slate-600 mt-1">Uses computers to analyze huge digital libraries of text (corpora) to find patterns, check grammar trends, and see how vocabulary changes over decades.</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">6. Chatbots & Conversational Agents</h4>
-                                                <p className="text-slate-600 mt-1">Automates conversations in customer service, banking, and medical portals. Resolves standard user queries, maintains natural context, and hands off complex problems to human agents. (e.g., banking agents to lock lost credit cards automatically).</p>
+                                                <p className="text-slate-600 mt-1">Answers customer questions automatically for banks, hospitals, and websites. They solve simple problems and hand off harder issues to real human employees.</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">7. Text Summarization & Content Generation</h4>
-                                                <p className="text-slate-600 mt-1">Condenses extremely long documents (legal files, medical research) into clean, concise summaries while retaining their core meaning. (e.g., summarize multi-page research papers instantly for fast reading).</p>
+                                                <p className="text-slate-600 mt-1">Condenses very long articles (such as legal terms or research papers) into short, clean paragraphs while keeping all core facts.</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">8. Language Learning & Educational Tools</h4>
-                                                <p className="text-slate-600 mt-1">Adaptive platforms like Duolingo use computational models to evaluate user inputs and provide real-time grammatical and pronunciation corrections.</p>
+                                                <p className="text-slate-600 mt-1">Smart school apps (like Duolingo) use computer language models to check what a student writes or says, giving them instant tips on grammar and accent pronunciation.</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">9. Forensic Linguistics & Cyber-Security</h4>
-                                                <p className="text-slate-600 mt-1">Analyzes written text for authorship attribution, plagiarism detection, and identifying threats or fraud. (e.g., matching the unique stylistic footprint of anonymous threatening emails).</p>
+                                                <p className="text-slate-600 mt-1">Analyzes writing styles to find who wrote an anonymous message, detect copied homework (plagiarism), or spot online fraud and threats.</p>
                                             </div>
 
                                             <div className="border-l-4 border-amber-500 pl-4 py-1">
                                                 <h4 className="font-extrabold text-slate-900 text-md">10. Ethical & Multilingual Inclusion</h4>
-                                                <p className="text-slate-600 mt-1">Reduces algorithmic bias, ensuring fair treatment of local dialects. Develops NLP tools for underrepresented languages to protect global cultural heritage.</p>
+                                                <p className="text-slate-600 mt-1">Ensures software works fairly for all regional dialects. It designs computer tools for rare native languages to help save local cultures from disappearing.</p>
                                             </div>
                                         </div>
 
                                     </div>
                                     <Ar title="التطبيقات العشرة الكبرى للغويات الحاسوبية">
-                                        تتنوع تطبيقات اللغويات الحاسوبية لتشمل الجوانب الحياتية والمهنية التالية:
+                                        تتنوع تطبيقات اللغويات الحاسوبية لتسهيل حياة البشر:
                                         <ol className="list-decimal pr-5 mt-2 space-y-2">
-                                            <li><strong>الترجمة الآلية (MT):</strong> مثل مترجم جوجل، وتعتمد حالياً على الشبكات العصبية بدلاً من القواعد الحرفية القديمة.</li>
-                                            <li><strong>معالجة وتخليق الكلام:</strong> تحويل الصوت إلى نصوص (مثل كتابة الرسائل بالصوت) والنصوص إلى كلام مسموع طبيعي (Siri).</li>
-                                            <li><strong>تحليل المشاعر (Sentiment Analysis):</strong> قياس النبرة العاطفية للجمهور (إيجابي، سلبي، محايد) لتقييم المنتجات.</li>
-                                            <li><strong>استرجاع المعلومات ومحركات البحث:</strong> فهم قصد المستخدم الفعلي من البحث وتجاوز الكلمات الحرفية المقترحة.</li>
-                                            <li><strong>لغويات المدونات والذخائر اللغوية:</strong> تحليل قواعد البيانات الضخمة (Corpora) لدراسة تطور الكلمات.</li>
-                                            <li><strong>المساعدون الآليون (Chatbots):</strong> خدمة العملاء الفورية في البنوك والمستشفيات طوال اليوم.</li>
-                                            <li><strong>تلخيص النصوص الآلي:</strong> تلخيص الأبحاث الأكاديمية والوثائق القانونية الطويلة في ثوانٍ.</li>
-                                            <li><strong>تطبيقات التعليم الذكي:</strong> مثل منصة Duolingo لتصحيح النطق والقواعد فورياً للمتعلمين.</li>
-                                            <li><strong>اللغويات الجنائية والأمن السيبراني:</strong> كشف السرقات الأدبية وتحديد هوية كاتبي رسائل التهديد والجرائم الرقمية.</li>
-                                            <li><strong>التطبيقات الأخلاقية وتعدد اللغات:</strong> تقليل التحيز في الخوارزميات وتوفير دعم تقني للغات المحلية النادرة لحفظ الهوية الثقافية.</li>
+                                            <li><strong>الترجمة الآلية:</strong> الترجمة الدقيقة بين اللغات بالاعتماد على الشبكات العصبية.</li>
+                                            <li><strong>معالجة الصوت وتخليقه:</strong> مثل الإملاء الصوتي وتحويل النصوص لكلام مسموع.</li>
+                                            <li><strong>تحليل المشاعر:</strong> تصنيف الآراء والنصوص آلياً لمعرفة رضا العملاء.</li>
+                                            <li><strong>استرجاع المعلومات:</strong> محركات بحث ذكية تفهم قصدك بدقة.</li>
+                                            <li><strong>لغويات المدونات:</strong> دراسة وحساب إحصاءات قواعد البيانات النصية الكبيرة.</li>
+                                            <li><strong>المساعدون الذكيون:</strong> الردود الآلية والدعم الفني في مواقع البنوك والشركات.</li>
+                                            <li><strong>التلخيص التلقائي:</strong> تلخيص أطنان من الوثائق الطويلة في سطور بسيطة.</li>
+                                            <li><strong>أدوات التعليم الذكي:</strong> منصات تصحيح القواعد والنطق لمتعلمي اللغات.</li>
+                                            <li><strong>اللغويات الجنائية:</strong> كشف الانتحال الأدبي ومطابقة البصمة الأسلوبية للرسائل.</li>
+                                            <li><strong>التعددية اللغوية والأخلاق:</strong> حماية اللغات النادرة من الاندثار وتقليل تحيز الخوارزميات.</li>
                                         </ol>
                                     </Ar>
                                 </Section>
@@ -683,95 +672,83 @@
                                     <div className="md:w-3/4 text-center md:text-left space-y-1">
                                         <h2 className="text-xl font-black text-slate-900">3. Natural Language Processing (NLP) & Ambiguity</h2>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            Why human language is incredibly difficult for machines, and the deep structural differences between syntactic and semantic analysis.
+                                            Why human language is incredibly tricky for digital machines, and the deep differences between grammar rules and logical meanings.
                                         </p>
                                     </div>
                                 </div>
 
                                 <Section title="What is NLP?" subtitle="NLU vs. NLG" icon={BrainCircuit} color="emerald">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p><strong>Natural Language Processing (NLP)</strong> lies at the intersection of computer science, linguistics, and machine learning. Its goal is to establish communication between computers and humans in natural language, enabling machines to understand and generate human text similar to how humans do.</p>
-                                        <p>The domain is divided into three core functional components:</p>
+                                        <p><strong>Natural Language Processing (NLP)</strong> is where computer science, linguistics, and machine learning meet. Its main goal is to help humans and computers talk using everyday natural languages.</p>
+                                        <p>The field is divided into three main operational tasks:</p>
                                         <ul className="list-disc pl-5 space-y-2">
-                                            <li><strong>Speech Recognition:</strong> The translation of spoken audio signals into text characters.</li>
-                                            <li><strong>Natural Language Understanding (NLU):</strong> A computer's internal capacity to interpret contextual meaning, syntax, and user intent.</li>
-                                            <li><strong>Natural Language Generation (NLG):</strong> A computer's ability to output natural-sounding human language.</li>
+                                            <li><strong>Speech Recognition:</strong> Turning recorded voice waves into written text characters.</li>
+                                            <li><strong>Natural Language Understanding (NLU):</strong> The computer's ability to figure out context, grammatical parts, and user intentions.</li>
+                                            <li><strong>Natural Language Generation (NLG):</strong> The computer's ability to write natural-sounding text that reads like human writing.</li>
                                         </ul>
                                     </div>
                                     <Ar title="مكونات معالجة اللغة الطبيعية">
-                                        تعد معالجة اللغة الطبيعية (NLP) حلقة الوصل بين الذكاء الاصطناعي واللغويات، وتنقسم لثلاثة محاور:
-                                        <ul className="list-disc pr-5 mt-2 space-y-1">
-                                            <li><strong>التعرف على الكلام (Speech Recognition):</strong> تحويل الصوت المنطوق إلى نص مكتوب.</li>
-                                            <li><strong>فهم اللغة الطبيعية (NLU):</strong> تمكين الحاسوب من تفسير المعنى، النوايا، والسياق (وهذا هو الجزء الأكثر صعوبة).</li>
-                                            <li><strong>توليد اللغة الطبيعية (NLG):</strong> صياغة وإنتاج نصوص كلامية بشرية بأسلوب طبيعي ومترابط ومفهوم.</li>
-                                        </ul>
+                                        تتكون معالجة اللغة الطبيعية (NLP) من: التعرف على الكلام (تحويل الصوت لنص)، وفهم اللغة الطبيعية (NLU) لاستيعاب السياق والهدف، وتوليد اللغة الطبيعية (NLG) لإنتاج ردود مكتوبة كأنها من شخص طبيعي.
                                     </Ar>
                                 </Section>
 
-                                <Section title="Why NLP is Uniquely Difficult" subtitle="Ambiguity and the Human Symbolic System" icon={ShieldAlert} color="emerald">
+                                <Section title="Why NLP is Uniquely Difficult" subtitle="Double Meanings and Human Symbol Systems" icon={ShieldAlert} color="emerald">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p>Natural human language is extremely difficult for computer systems because it was created for humans, who share experiences and intuition. As explained by prominent linguist <strong>Chris Manning</strong>, human language is a <strong>discrete, symbolic, and categorical system</strong>.</p>
+                                        <p>Human language is extremely difficult for computer hardware because it was created by humans, for humans, relying on shared life experience and common sense. As explained by computer linguist <strong>Chris Manning</strong>, human language is a <strong>discrete, symbolic, and categorical system</strong>.</p>
                                         
                                         <div className="bg-emerald-50 text-emerald-950 p-4 rounded-xl border border-emerald-100 text-xs leading-relaxed space-y-2">
                                             <p className="font-bold">The Core Paradox of Language Processing:</p>
-                                            <p>Human symbols (words, signs, gestures) are discrete categories. However, in our neural pathways (human brain), these symbols are represented as <strong>continuous patterns</strong> and transmitted via continuous signals (soundwaves, light waves).</p>
+                                            <p>Human words and signs are separate, distinct categories (discrete). However, in our brains and voices, these symbols are represented as <strong>continuous patterns</strong> and sent using continuous waves (like sound waves and light waves).</p>
                                         </div>
 
                                         <p><strong>Primary Roadblocks in NLP:</strong></p>
                                         <ul className="list-disc pl-5 space-y-2">
-                                            <li><strong>Generative Infinity:</strong> There are infinitely many ways to arrange words into sentences.</li>
-                                            <li><strong>Polysemy & homonymy:</strong> Individual words have multiple unrelated meanings depending on context.</li>
-                                            <li><strong>Contextual Ambiguity:</strong> Interpreting exact meaning requires shared worldly experience, which computers lack.</li>
+                                            <li><strong>Generative Infinity:</strong> There are infinite ways to stitch words into unique sentences, meaning a computer always encounters structures it has never seen before.</li>
+                                            <li><strong>Polysemy:</strong> Most words have multiple entirely different meanings depending on where they are used.</li>
+                                            <li><strong>Contextual Ambiguity:</strong> Working out the true meaning of a sentence requires real-world common sense, which computers do not have.</li>
                                         </ul>
 
                                         <p><strong>Classic Example of Structural Ambiguity:</strong></p>
                                         <div className="bg-slate-50 p-4 rounded-xl border font-serif italic text-slate-800 text-sm">
                                             "The Pope's baby steps on gays"
                                         </div>
-                                        <p>This actual news headline can be interpreted in two completely different ways:</p>
+                                        <p>This actual news headline can be read in two completely different ways:</p>
                                         <ul className="list-disc pl-5 space-y-1 text-xs text-slate-600">
-                                            <li>Meaning A: The Pope's infant physically walks on top of gay individuals (morbidly bizarre).</li>
-                                            <li>Meaning B: The Pope is taking small progressive measures (baby steps) regarding gay rights issues.</li>
+                                            <li>Meaning A: The Pope's infant child physically walks on top of people (a bizarre, incorrect image).</li>
+                                            <li>Meaning B: The Pope is taking small, careful measures (baby steps) regarding rights issues.</li>
                                         </ul>
-                                        <p>While humans easily resolve this using real-world context, a machine struggles to choose the correct interpretation.</p>
+                                        <p>While humans instantly select the correct meaning using common sense, a computer has a very hard time selecting the correct path.</p>
                                     </div>
                                     <Ar title="لماذا تعد معالجة اللغة الطبيعية صعبة جداً؟">
-                                        اللغة البشرية معقدة ومصممة للتواصل الإنساني القائم على المشاعر والخبرات المشتركة.
-                                        <br/><br/>
-                                        يوضح العالم <strong>كريس مانينغ</strong> أن اللغة نظام <strong>رمزي ومحدد ومنفصل (Discrete and Symbolic)</strong>، ولكن في العقل البشري، تتم معالجة هذه الرموز كأنماط إشارات مستمرة (أصوات ورؤية).
-                                        <br/><br/>
-                                        <strong>أهم تحديات الفهم الحاسوبي:</strong>
-                                        <ul className="list-disc pr-5 mt-2 space-y-1">
-                                            <li><strong>اللانهاية الإنتاجية:</strong> توجد طرق لا حصر لها لترتيب الكلمات وصياغتها.</li>
-                                            <li><strong>الغموض الدلالي والسياقي:</strong> مثل عنوان الخبر الشهير: <em>"The Pope's baby steps on gays"</em> والذي يمكن تفسيره بسذاجة حاسوبية على أن طفل البابا يدهس المثليين بأقدامه، أو التفسير الصحيح وهو أن البابا يتخذ خطوات تدريجية بسيطة (Baby steps) تجاه الملف. غياب الفهم السياقي يعيق الحاسوب عن الترجمة السليمة.</li>
-                                        </ul>
+                                        لأن اللغة صُممت للبشر القادرين على استيعاب السياق وتوقع المقصود. 
+                                        ويشير اللغوي <strong>كريس مانينغ</strong> إلى أن الكلمات رموز منفصلة ومحددة، لكن المخ يتعامل معها كإشارات فيزيائية مستمرة. من أكبر المشاكل اللانهاية الإنتاجية وتعدد المعاني؛ مثل عنوان الصحيفة الشهير <em>"The Pope's baby steps on gays"</em> الذي قد يفهمه الحاسوب على أن طفل البابا يطأ الأقدام، بينما المقصود الحقيقي هو اتخاذ خطوات بسيطة ومدروسة.
                                     </Ar>
                                 </Section>
 
                                 <Section title="Syntactic vs. Semantic Analysis" icon={Feather} color="emerald">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p><strong>Syntax</strong> and <strong>Semantics</strong> are the two primary dimensions of linguistic analysis. A valid language sentence requires both, but they govern completely different aspects:</p>
+                                        <p><strong>Syntax</strong> and <strong>Semantics</strong> are the two main levels of language analysis. A sentence needs both, but they govern completely different things:</p>
                                         <ul className="list-disc pl-5 space-y-2">
-                                            <li><strong>Syntactic Analysis (Syntax):</strong> Focuses on the structural and grammatical rules of a sentence (how words are organized into valid templates).</li>
-                                            <li><strong>Semantic Analysis (Semantics):</strong> Focuses on the logical meaning, truth value, and relational context of the words.</li>
+                                            <li><strong>Syntactic Analysis (Syntax):</strong> Looks at the structural and grammar rules of a sentence (how words are organized into a valid skeleton).</li>
+                                            <li><strong>Semantic Analysis (Semantics):</strong> Looks at the actual logical meaning, truth, and relationships of the words.</li>
                                         </ul>
 
-                                        <p>A sentence can be completely syntactically correct, yet remain semantically invalid (meaningless):</p>
+                                        <p>A sentence can be completely correct in its grammar, but make absolutely zero sense logically:</p>
                                         <div className="bg-slate-50 p-4 rounded-xl border font-mono text-xs text-slate-800">
                                             "cows flow supremely"
                                         </div>
                                         <p><strong>Structural Breakdown:</strong></p>
                                         <ul className="list-disc pl-5 space-y-1 text-xs">
-                                            <li><strong>Syntax:</strong> Grammatically perfect. [cows / Noun] + [flow / Verb] + [supremely / Adverb] matches the standard English structural template.</li>
-                                            <li><strong>Semantics:</strong> Completely meaningless. Cows are solid mammals and cannot fluidly 'flow' anywhere.</li>
+                                            <li><strong>Syntax:</strong> Grammatically perfect. {"$[\\text{cows / Noun}] + $[\\text{flow / Verb}] + $[\\text{supremely / Adverb}]$"} matches standard English sentence templates.</li>
+                                            <li><strong>Semantics:</strong> Completely meaningless. Cows are solid animals; they cannot flow like water.</li>
                                         </ul>
-                                        <p>Semantic analysis remains one of the hardest, unresolved research challenges in computer science, because speech recognition systems can accurately transcribe audio characters while failing to understand what the words actually mean.</p>
+                                        <p>Understanding semantics is one of the hardest problems in computer science because transcription systems are great at writing down typed words, but they still struggle to understand what those words actually mean.</p>
                                     </div>
                                     <Ar title="التحليل النحوي مقابل التحليل الدلالي">
-                                        <p><strong>التحليل النحوي (Syntax):</strong> يبحث القواعد الهيكلية وتركيب الجملة ومواقع الكلمات الإعرابية.</p>
-                                        <p><strong>التحليل الدلالي (Semantics):</strong> يبحث عن المنطق والمعنى الفعلي والروابط الفكرية بين الألفاظ.</p>
+                                        <p><strong>التحليل النحوي (Syntax):</strong> يبحث في صحة تركيب وهيكل الجملة وتطابقها مع القواعد الإعرابية.</p>
+                                        <p><strong>التحليل الدلالي (Semantics):</strong> يبحث في منطقية المعنى والروابط الفكرية بين الألفاظ.</p>
                                         <br/>
-                                        <strong>مثال شهير:</strong> الجملة <em>"cows flow supremly"</em> هي جملة <strong>نحوية صحيحة بنسبة 100%</strong> لأن تركيبها يتكون من (فاعل + فعل + حال)، ولكنها جملة <strong>دلالية خاطئة تماماً</strong> ولا معنى لها؛ فالأبقار كائنات صلبة ولا يمكنها أن تسيل أو تتدفق (Flow) مثل الماء. أنظمة تحويل الصوت لكتابة تنجح نحوياً لكنها تفشل دلالياً في فهم ما يطلبه المستخدم.
+                                        جملة <em>"cows flow supremly"</em> هي جملة <strong>نحوية صحيحة</strong> تماماً من حيث القواعد (اسم + فعل + حال)، ولكنها جملة <strong>دلالية خاطئة</strong> ومستحيلة، فالأبقار كائنات صلبة ولا تتدفق كالسوائل. وهذا يفسر نجاح البرامج في النسخ الصوتي وفشلها أحياناً في فهم المقاصد.
                                     </Ar>
                                 </Section>
 
@@ -793,19 +770,19 @@
                                     <div className="md:w-3/4 text-center md:text-left space-y-1">
                                         <h2 className="text-xl font-black text-slate-900">4. Processing Techniques & Deep Learning</h2>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            The technical toolkit of NLP: From parsing trees and Porter stemming to neural high-dimensional semantic spaces.
+                                            The computer's toolkit: how software maps sentence trees, strips word endings, recognizes names, and converts meaning into numbers.
                                         </p>
                                     </div>
                                 </div>
 
-                                <Section title="Constituency Parsing & Trees" subtitle="Breaking sentence structures down visually" icon={Network} color="blue">
+                                <Section title="Constituency Parsing & Trees" subtitle="Visualizing sentence skeletons" icon={Network} color="blue">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p><strong>Parsing</strong> refers to the formal analysis of a sentence by a computer into its components, showing their syntactic relations in a visual <strong>Parse Tree</strong>.</p>
-                                        <p>Consider the constituency parse tree for the sentence: <em>"The thief robbed the apartment."</em></p>
+                                        <p><strong>Parsing</strong> is when a computer analyzes a sentence and draws a visual <strong>Parse Tree</strong> to show how words group together and relate grammatically.</p>
+                                        <p>Here is a basic constituency parse tree for: <em>"The thief robbed the apartment."</em></p>
                                         
                                         {/* Styled ASCII Parse Tree */}
                                         <div className="bg-slate-900 text-emerald-400 p-6 rounded-2xl font-mono text-sm leading-relaxed overflow-x-auto shadow-inner">
-                                            <p className="text-slate-400 border-b border-slate-700 pb-2 mb-4 text-xs font-bold uppercase tracking-wider">Interactive Parse Tree Diagram</p>
+                                            <p className="text-slate-400 border-b border-slate-700 pb-2 mb-4 text-xs font-bold uppercase tracking-wider">Visual Sentence Tree Diagram</p>
                                             <pre className="no-scrollbar">{`          [S] (Full Sentence)
                 /   \\
       [NP] (Noun Phrase)   [VP] (Verb Phrase)
@@ -819,74 +796,67 @@
 
                                         <p><strong>The Three Types of Information Conveyed by the Parse Tree:</strong></p>
                                         <ol className="list-decimal pl-5 space-y-2">
-                                            <li><strong>Part of Speech (Lexical Level):</strong> The tags directly above individual words (DT = Determiner, N = Noun, V = Verb).</li>
-                                            <li><strong>Phrasal Groupings (Constituents):</strong> Words grouped into logical phrases (NP = "the thief", "the apartment"; VP = "robbed the apartment").</li>
-                                            <li><strong>Grammatical Relationships:</strong> The structural links show semantic roles. Because NP ("the thief") is directly connected under S next to VP, the computer can deduce that "the thief" is the subject of the verb "robbed."</li>
+                                            <li><strong>Part of Speech (Lexical Level):</strong> The grammar tags right above each word (DT = Determiner/Article, N = Noun, V = Verb).</li>
+                                            <li><strong>Phrasal Groupings (Constituents):</strong> Words grouped into logical chunks (NP = "the thief" or "the apartment"; VP = "robbed the apartment").</li>
+                                            <li><strong>Grammatical Relationships:</strong> The structural connections show semantic roles. Because NP ("the thief") is joined directly under S next to VP, the software instantly knows that "the thief" is the subject who did the action.</li>
                                         </ol>
                                     </div>
                                     <Ar title="تحليل جمل الإعراب البنيوي (Parsing)">
-                                        <strong>الإعراب الهيكلي (Parsing):</strong> هو عملية حاسوبية لتقسيم الجملة إلى أجزاء وتحديد دور كل منها عبر شجرة إعراب مرئية (Parse Tree).
-                                        <br/><br/>
-                                        <strong>توضح شجرة الإعراب 3 مستويات من المعلومات:</strong>
-                                        <ul className="list-disc pr-5 mt-2 space-y-1">
-                                            <li><strong>أقسام الكلام:</strong> تحديد فئة كل كلمة (اسم N, فعل V, أداة تحديد DT).</li>
-                                            <li><strong>العبارات (Phrases):</strong> تجميع الكلمات ذات الصلة في عبارة اسمية (NP) مثل "the thief" أو عبارة فعلية (VP) مثل "robbed the apartment".</li>
-                                            <li><strong>العلاقات النحوية:</strong> توضح الشجرة التبعية والربط؛ فيفهم البرنامج فوراً أن اللص (NP) هو الفاعل المباشر الذي قام بجرم السرقة (robbed).</li>
-                                        </ul>
+                                        <strong>الإعراب الهيكلي (Parsing):</strong> تحليل حاسوبي يوضح دور كل لفظ وموقعها الإعرابي بشجرة بصرية تفاعلية. 
+                                        توضح الشجرة ثلاثة أمور: أقسام الكلمة (فعل، اسم، أداة)، العبارات الكبرى (العبارات الاسمية والفعلية)، والعلاقات والتبعية لمعرفة فاعل ومفعول الفعل آلياً.
                                     </Ar>
                                 </Section>
 
                                 <Section title="Stemming & Text Segmentation" icon={Feather} color="blue">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p><strong>1. Stemming:</strong> A foundational technique used to strip prefixes and suffixes (affixes), reducing a word to its base <strong>stem</strong>. Words with different structural forms often share the exact same core meaning (e.g., "touched" and "touching" both map to "touch").</p>
-                                        <p>Storing every single variation of every word would require an enormous database, leading to slow processing times. Stemming solves this by only storing the common stem. A famous and widely used method for this is the <strong>Porter Stemming Algorithm (1979)</strong>.</p>
-                                        <p><strong>2. Text Segmentation:</strong> The process of dividing continuous text into meaningful units such as words, sentences, or topics. While English segmenters can mostly rely on spaces, ambiguities like "icebox", "ice-box", and "ice box" remain a challenge.</p>
+                                        <p><strong>1. Stemming:</strong> A simple tool used to chop off prefixes and suffixes, reducing a word to its core base <strong>stem</strong>. Words with different spellings often share the same root meaning (e.g., "touched" and "touching" both point back to "touch").</p>
+                                        <p>Storing every spelling variation of every word would require a massive database and slow down processing. Stemming saves space by storing just the root. A famous, standard recipe for doing this is the <strong>Porter Stemming Algorithm (1979)</strong>.</p>
+                                        <p><strong>2. Text Segmentation:</strong> The process of dividing running text into meaningful pieces like words, sentences, or topics. While English segmenters can mostly rely on spaces, complex compounds like "icebox" vs "ice-box" remain a challenge.</p>
                                     </div>
                                     <Ar title="تقنيات الجذع والتقسيم النصي">
-                                        <p><strong>جذع الكلمات (Stemming):</strong> تقليص الكلمة وإعادة صيغتها إلى أصلها (الذروة أو الجذع) بعد إزالة السوابق واللواحق (مثل تحويل "touched" و "touching" إلى الجذع المشترك "touch").</p>
-                                        <p>لو قمنا بتخزين كل مشتقات الكلمات، سنحتاج لقواعد بيانات عملاقة ومبطئة حاسوبياً. خوارزمية <strong>Porter Stemming Algorithm (1979)</strong> هي الحل الأذكى لجمع الكلمات تحت جذوع موحدة.</p>
-                                        <p><strong>تقسيم النصوص (Segmentation):</strong> تقسيم الحروف المتصلة لوحدات دلالية؛ وهو معقد حتى في الإنجليزية عند معالجة الكلمات المركبة مثل (icebox أو ice-box).</p>
+                                        <strong>اشتقاق وجذع الكلمات (Stemming):</strong> تقليص الكلمات وإعادتها لجذرها المشترك (تحويل touched و touching إلى touch) مما يوفر مساحات تخزين عملاقة. 
+                                        خوارزمية <strong>Porter Stemming Algorithm (1979)</strong> هي المعيار الأبرز لتسهيل البحث واسترجاع المعلومات. 
+                                        التقسيم النصي (Segmentation) هو تقطيع السطور المتصلة لوحدات دلالية واضحة.
                                     </Ar>
                                 </Section>
 
                                 <Section title="Named Entity Recognition, Relations, & Sentiment" icon={Users} color="blue">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p>Advanced NLU applications depend on three pipeline tasks working in sequence:</p>
+                                        <p>Advanced language analysis relies on three pipeline tasks running one after another:</p>
                                         <ul className="list-disc pl-5 space-y-3">
-                                            <li><strong>Named Entity Recognition (NER):</strong> Locates and classifies nouns into predefined categories (Persons, Organizations, Locations, Money, Dates).
+                                            <li><strong>Named Entity Recognition (NER):</strong> Finds and classifies nouns into set groups (People, Businesses, Locations, Money, Dates).
                                                 <div className="bg-slate-50 p-3 rounded-xl border font-mono text-xs text-slate-800 mt-2">
                                                     <p><strong>Pre-NER:</strong> "Martin bought 300 shares of SAP in 2016."</p>
-                                                    <p className="text-blue-800 mt-1"><strong>Post-NER:</strong> "[Martin] Person bought 300 shares of [SAP] Organization in [2016] Time."</p>
+                                                    <p className="text-blue-800 mt-1"><strong>Post-NER:</strong> "[Martin]<sub>PERSON</sub> bought 300 shares of [SAP]<sub>ORGANIZATION</sub> in [2016]<sub>DATE</sub>."</p>
                                                 </div>
                                             </li>
-                                            <li><strong>Relationship Extraction:</strong> Identifies semantic relations between the named entities outputted by NER (e.g., identifying marriage, employment, or purchasing connections).</li>
-                                            <li><strong>Sentiment Analysis:</strong> Evaluates documents to predict the writer's attitude or emotional tone (Positive, Negative, Neutral). This helps businesses analyze surveys, feedback, and reviews.</li>
+                                            <li><strong>Relationship Extraction:</strong> Finds semantic links between the named entities found by NER (e.g., mapping who is married to whom, or which person works at which company).</li>
+                                            <li><strong>Sentiment Analysis:</strong> Scans sentences to calculate if the writer's attitude is Positive, Negative, or Neutral. This helps companies read feedback and product reviews instantly.</li>
                                         </ul>
                                     </div>
                                     <Ar title="استخراج الكيانات، العلاقات، وتحليل المشاعر">
-                                        تقنيات تحليل وفهم العلاقات بين الجمل:
+                                        أهم مهام معالجة النصوص:
                                         <ul className="list-disc pr-5 mt-2 space-y-1">
-                                            <li><strong>تمييز الكيانات المسماة (NER):</strong> تحديد وتصنيف الأسماء الهامة في النص (أشخاص، مؤسسات، مواقع، أرقام، تواريخ)، مثل تحويل "Martin" إلى [شخص] و "SAP" إلى [مؤسسة].</li>
-                                            <li><strong>استخراج العلاقات (Relationship Extraction):</strong> ربط الكيانات المستخرجة لتوضيح العلاقة بينها (مثل كشف علاقة ملكية أو زواج أو وظيفة).</li>
-                                            <li><strong>تحليل المشاعر (Sentiment Analysis):</strong> فحص التغذية الراجعة للعملاء لتصنيف آرائهم إلى (إيجابي، سلبي، محايد) لتقييم الرضا العام.</li>
+                                            <li><strong>تمييز الكيانات المسماة (NER):</strong> فرز الأسماء الصريحة كالأشخاص والشركات والتواريخ آلياً.</li>
+                                            <li><strong>استخراج العلاقات:</strong> إيجاد الروابط والصلات العملية والعائلية بين الكيانات المصنفة.</li>
+                                            <li><strong>تحليل المشاعر:</strong> تصنيف النصوص وقراءة نبرة الكاتب (إيجابي، سلبي، محايد) لتقييم الآراء بشكل سريع وتلقائي.</li>
                                         </ul>
                                     </Ar>
                                 </Section>
 
                                 <Section title="Deep Learning & Semantic Vectors" icon={BrainCircuit} color="blue">
                                     <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                                        <p><strong>Deep learning</strong> represents word meanings as <strong>vectors</strong> (lists of numbers) in a high-dimensional continuous space called <strong>Semantic Space</strong>. Words with similar meanings appear close to each other in this space.</p>
+                                        <p><strong>Deep learning</strong> represents word meanings as <strong>vectors</strong> (long lists of numbers) inside a high-dimensional continuous grid called <strong>Semantic Space</strong>. Words with similar meanings are placed very close to each other inside this virtual space.</p>
                                         <p><strong>Key Concepts:</strong></p>
                                         <ul className="list-disc pl-5 space-y-2">
-                                            <li><strong>Visualization:</strong> High-dimensional word vectors can be reduced to two dimensions for analysis using techniques like <strong>PCA</strong> or <strong>T-SNE</strong>.</li>
-                                            <li><strong>Subword (Morpheme) Vectors:</strong> Instead of whole words, morphemes can have individual vectors (e.g., "undesirability" split into "un + desire + able + ity"). Neural networks then combine these vectors to construct full word meanings.</li>
-                                            <li><strong>Context-Aware Processing:</strong> Recurrent Neural Networks (RNNs) convert complete sentences into vectors, which are then used in machine translation, chatbots, and email auto-replies.</li>
+                                            <li><strong>Visualization:</strong> High-dimensional word vectors can be flattened into simple {"$2\\text{D}$"} maps using smart math tools like <strong>PCA</strong> or <strong>t-SNE</strong> so we can look at them.</li>
+                                            <li><strong>Subword (Morpheme) Vectors:</strong> Instead of whole words, individual word pieces (morphemes) get their own vectors (e.g., splitting "undesirability" into {"$\\text{un} + \\text{desire} + \\text{able} + \\text{ity}$"}). Neural networks join these lists together to find the full word meaning.</li>
+                                            <li><strong>Contextual Tracking:</strong> Recurrent Neural Networks (RNNs) convert whole sentences into unified vectors. These vectors are then used to build automated translators, writing bots, and fast email auto-responders.</li>
                                         </ul>
                                     </div>
                                     <Ar title="التعلم العميق ومتجهات الفضاء الدلالي">
-                                        يمثل <strong>التعلم العميق (Deep Learning)</strong> ثورة في مجال اللغة؛ إذ يترجم الكلمات إلى <strong>متجهات رقمية (Numerical Vectors)</strong> داخل فضاء متعدد الأبعاد يسمى <strong>الفضاء الدلالي (Semantic Space)</strong>. الكلمات المتقاربة في المعنى (مثل ملك وملكة) تكون متقاربة في المسافة الرياضية.
-                                        <br/><br/>
-                                        يمكن دمج متجهات أجزاء الكلمة (المورفيمات) لتفسير الكلمات المركبة مثل (un + desire + able + ity)، وتستخدم الشبكات العصبية العميقة المتتالية (RNNs) لمعالجة جمل كاملة وتحويلها إلى متجهات تستخدم في محادثات الذكاء الاصطناعي والترجمة الآلية.
+                                        يمثل <strong>التعلم العميق (Deep Learning)</strong> معاني الكلمات كمتجهات رقمية (Numerical Vectors) داخل فضاء متعدد الأبعاد (Semantic Space)؛ بحيث تتقارب معاني الكلمات المتشابهة في المسافات الرياضية. 
+                                        ويمكن تبسيط أبعاد هذا الفضاء لخرائط ثنائية الأبعاد {"($2\\text{D}$)"} برمجياً لمطالعتها عبر أدوات مثل PCA و t-SNE، كما تُعالج الجمل كمتجهات متكاملة لخدمة المحادثات الذكية.
                                     </Ar>
                                 </Section>
 
@@ -908,7 +878,7 @@
                                     <div className="md:w-3/4 text-center md:text-left space-y-1">
                                         <h2 className="text-xl font-black text-slate-900">5. Syllabus Terminology Lexicon</h2>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            The 24 required technical terms defined, explained with concrete examples, and supplemented with comprehensive Arabic breakdowns.
+                                            All 24 required technical terms defined, explained simply with concrete examples, and backed with Arabic summaries.
                                         </p>
                                     </div>
                                 </div>
@@ -917,55 +887,55 @@
                                     <TermCard 
                                         index="1"
                                         name="Words and Tokens"
-                                        definition="A word is a meaningful unit of language, while a token is the smallest unit after text is split during processing."
-                                        explanation="Tokenization is the pre-processing step that breaks running text into structured tokens for the computer to analyze."
+                                        definition="A word is a meaningful unit of language. A token is the smallest unit of text created when a computer splits a sentence during processing."
+                                        explanation="Tokenization is the very first step. It splits words, spaces, and punctuation into individual pieces so computers can analyze them easily."
                                         example="Sentence: 'I love apples.' -> Tokens: ['I', 'love', 'apples', '.']"
-                                        arabicTitle="المقارنة بين الكلمة والرمز (Tokens)"
-                                        arabicContent="الكلمة هي وحدة لغوية تحمل معنى، بينما الرمز (Token) هو أصغر وحدة معالجة ناتجة عن تقسيم النص حاسوبياً. عملية التقطيع (Tokenization) هي البداية الضرورية لفصل الكلمات وعلامات الترقيم لتسهيل الحساب المبرمج للجمل."
+                                        arabicTitle="الفرق بين الكلمة والرمز (Tokens)"
+                                        arabicContent="الكلمة وحدة لغوية ذات معنى، بينما الرمز (Token) هو أصغر وحدة معالجة ناتجة عن تقسيم النص حاسوبياً لتسهيل الحساب."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="2"
                                         name="N-gram Language Models"
-                                        definition="An N-gram is a sequence of N words. An N-gram language model predicts the probability of a word based on the previous N-1 words."
-                                        explanation="Helps computers predict what word is most likely to come next in a sentence."
-                                        example="Bigram (2-gram): 'I love' -> predicts 'apples' with high probability. Trigram (3-gram): 'I love apples' -> predicts '.'"
+                                        definition="An N-gram is a sequence of N words in a row. An N-gram language model calculates the probability of a word appearing based on the previous N-1 words."
+                                        explanation="This model helps a computer predict what word you will type next on a keyboard."
+                                        example="Bigram ($2$-gram): 'I love' -> predicts 'apples' with high probability. Trigram ($3$-gram): 'I love apples' -> predicts '.'"
                                         arabicTitle="نماذج اللغات متعددة المقاطع (N-gram)"
-                                        arabicContent="نموذج الـ N-gram هو متتالية من الكلمات بطول N. يستخدم للتنبؤ بالكلمة التالية بناءً على الكلمات السابقة لها. مثل التنبؤ بالكلمة المتممة لـ (أنا أحب) لتكون (البرمجة) باحتمالية عالية، وهو أساس لوحة المفاتيح الذكية وتصحيح الكتابة."
+                                        arabicContent="متتالية من الكلمات بطول $N$، تُستعمل للتنبؤ بالكلمة التالية بناءً على الكلمات السابقة، وهي أساس لوحات المفاتيح الذكية."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="3"
                                         name="Logistic Regression & Classification"
-                                        definition="A statistical method used to classify text into distinct categories."
-                                        explanation="It calculates probabilities to assign input text to the most likely pre-defined category (e.g., classifying emails as spam or not spam)."
-                                        example="Email: 'Win money now!' -> Classifies as 'Spam'. Email: 'Meeting at 10 AM.' -> Classifies as 'Ham'."
+                                        definition="A mathematical model used to sort (classify) text into distinct groups."
+                                        explanation="It calculates probabilities to assign input text to the best match category (such as sorting email into 'spam' or 'normal')."
+                                        example="Email: 'Win free money now!' -> Classifies as 'Spam'. Email: 'Let's meet at 10 AM' -> Classifies as 'Normal'."
                                         arabicTitle="الانحدار اللوجستي وتصنيف النصوص"
-                                        arabicContent="طريقة إحصائية رياضية تُستخدم لفرز وتصنيف النصوص لعدة فئات محددة سلفاً. يقوم بحساب الاحتمالات لتصنيف بريد إلكتروني ما على أنه (رسالة مزعجة Spam) أو (رسالة عادية Ham) بناءً على الكلمات المفتاحية للرسالة."
+                                        arabicContent="طريقة إحصائية تُصنف النصوص لفئات محددة (مثل كشف رسائل البريد المزعج Spam بناءً على الألفاظ)."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="4"
                                         name="Embeddings"
-                                        definition="Numerical representations of words in a continuous vector space."
-                                        explanation="Words with similar meanings are placed close together in this multi-dimensional space, enabling algebraic word analogies."
-                                        example="King - Man + Woman = Queen (words mapped to continuous numerical lists)."
+                                        definition="Representing words as lists of numbers (vectors) in a continuous space."
+                                        explanation="Words with similar meanings are placed close together, allowing computers to perform word algebra."
+                                        example="King - Man + Woman = Queen (represented as mathematical lists)."
                                         arabicTitle="التمثيل اللغوي الرقمي (Embeddings)"
-                                        arabicContent="تضمين الكلمات (Embeddings) هو تحويل الكلمات إلى أرقام (متجهات) في فضاء مستمر؛ بحيث تتواجد الكلمات المترادفة في معانيها بالقرب من بعضها البعض. الميزة الأهم هي إجراء العمليات الجبرية الدلالية مثل: (ملك - رجل + امرأة = ملكة)."
+                                        arabicContent="تحويل الكلمات لأرقام (متجهات) في فضاء مستمر؛ بحيث تتقارب الكلمات المتشابهة مثل: (ملك - رجل + امرأة = ملكة)."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="5"
                                         name="Neural Networks"
-                                        definition="Computational models inspired by the structure of the human brain, made of layers of nodes (neurons) that process information."
-                                        explanation="Neural networks learn complex patterns in text to perform tasks like translation, sequence labeling, or sentiment analysis."
-                                        example="Input text -> Hidden Layer Weights -> Output Prediction (e.g., 'I am happy' -> Positive)."
+                                        definition="Computer models inspired by the human brain, made of connected layers of nodes (neurons) that process data."
+                                        explanation="Neural networks learn complex patterns in text to do hard jobs like translating, writing, or reading emotions."
+                                        example="Input: 'I am happy' -> Hidden Weights -> Output Prediction: 'Positive Mood'."
                                         arabicTitle="الشبكات العصبية الحاسوبية (Neural Networks)"
-                                        arabicContent="نماذج برمجية مصممة بمحاكاة الخلايا العصبية في الدماغ البشري. تتكون من طبقات معالجة داخلية تقوم باستقبال المدخلات وتدريب الأوزان الحسابية لكشف الأنماط المعقدة وتصنيف عواطف النصوص أو ترجمتها بنجاح مذهل."
+                                        arabicContent="نماذج برمجية تحاكي خلايا المخ البشري لتصنيف المشاعر أو ترجمة الكلمات عبر طبقات معالجة داخلية."
                                         themeColor="purple"
                                     />
 
@@ -973,159 +943,159 @@
                                         index="6"
                                         name="Large Language Models (LLMs)"
                                         definition="Advanced neural networks trained on massive amounts of text to understand and generate human-like language."
-                                        explanation="These models can generate coherent essays, write code, translate languages, and respond to prompts based on patterns learned during pre-training."
-                                        example="Input: 'Explain photosynthesis.' -> Output: A detailed, coherent description."
+                                        explanation="These models can write essays, compose code, translate languages, and answer questions based on the patterns they learned."
+                                        example="Input: 'Explain gravity simply.' -> Output: A clear, easy-to-read explanation."
                                         arabicTitle="نماذج اللغات الضخمة (LLMs)"
-                                        arabicContent="شبكات عصبية عملاقة تم تدريبها مسبقاً على كميات هائلة من النصوص والكتب لتمكينها من توليد نصوص وفهم الأسئلة وصياغة مقالات برمجية وأدبية تحاكي الذكاء الإنساني (مثل GPT و Gemini)."
+                                        arabicContent="شبكات عصبية عملاقة تدربت على ملايين الكتب لإنتاج وتوليد نصوص تحاكي ذكاء الإنساني (مثل GPT)."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="7"
                                         name="Transformers"
-                                        definition="A neural network architecture designed for sequence-to-sequence tasks, using attention mechanisms to process word context."
-                                        explanation="Transformers revolutionized NLP by allowing models to handle long texts efficiently without relying on step-by-step sequential processing. They power influential models like BERT, GPT, and T5:"
+                                        definition="A neural network structure designed to process words using attention mechanisms to understand context."
+                                        explanation="Transformers changed AI by letting models look at whole sentences at once, instead of word-by-word. This powers models like:"
                                         example={
-                                            <div className="space-y-2 text-xs">
-                                                <p><strong>BERT:</strong> Reads bidirectional context for deep understanding (e.g., distinguishing 'river bank' vs. 'financial bank').</p>
-                                                <p><strong>GPT:</strong> Reads left-to-right to predict the next word in language generation.</p>
-                                                <p><strong>T5:</strong> A unified 'text-to-text' framework where both inputs and outputs are text (e.g., 'Translate English to German: ...').</p>
+                                            <div className="space-y-2 text-xs font-sans">
+                                                <p><strong>BERT:</strong> Reads bidirectionally (both sides at once) to understand context (e.g., 'financial bank' vs. 'river bank').</p>
+                                                <p><strong>GPT:</strong> Reads left-to-right to predict and write the next word.</p>
+                                                <p><strong>T5:</strong> Treats all tasks as text-to-text (e.g., 'Translate English to French: ...').</p>
                                             </div>
                                         }
                                         arabicTitle="بنية المحولات (Transformers)"
-                                        arabicContent="المحولات (Transformers) هي الهيكل البرمجي الثوري الذي غير مسار معالجة اللغات بالاعتماد على آليات الانتباه (Attention) لفهم علاقة الكلمات ببعضها في الجمل الطويلة دفعة واحدة. ينبثق منها: BERT لفهم السياقات المعقدة للكلمة من الجهتين، و GPT لتوليد النصوص بالتنبؤ بالكلمة التالية، و T5 لمعاملة كل المهام كنصوص متبادلة."
+                                        arabicContent="الهيكل الثوري الذي يعتمد على آليات الانتباه (Attention) لفهم الكلمات معاً؛ ينبثق منها: BERT للفهم، و GPT للتوليد، و T5 لمعالجة المهام كنصوص متبادلة."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="8"
                                         name="Post-training (Instruction Tuning, Alignment, & Compute)"
-                                        definition="Additional optimization steps performed after a large language model (LLM) has completed its base pre-training."
-                                        explanation="Includes Instruction Tuning (ensuring the model follows commands), Alignment (making the model safe and unbiased), and Test-Time Compute (using extra processing power at prediction time)."
-                                        example="A base model that simply continues sentences is fine-tuned to answer questions as a polite, helpful assistant."
+                                        definition="Extra optimization steps done after a large language model (LLM) finishes its basic training."
+                                        explanation="Includes Instruction Tuning (making the model follow rules), Alignment (making it safe and helpful), and extra computer processing time (Compute) while answering."
+                                        example="Changing a basic text-completing model into a helpful, polite assistant."
                                         arabicTitle="مرحلة ما بعد التدريب (Post-training)"
-                                        arabicContent="هي الخطوات الإضافية لضبط النموذج الأساسي بعد تدريبه الأول؛ وتشمل: ضبط التعليمات لاتباع الأوامر بدقة، والمحاذاة (Alignment) لضمان أمان الردود وعدم تحيزها أخلاقياً، واستخدام قوة معالجة إضافية لحظة الإجابة لتحسين الدقة."
+                                        arabicContent="خطوات إضافية لضبط سلوك النموذج؛ لاتباع الأوامر بدقة، وضمان أمان الإجابات أخلاقياً، وزيادة دقتها وحساباتها."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="9"
                                         name="Masked Language Models (MLMs)"
-                                        definition="Language models that learn by predicting randomly hidden (masked) words in a sentence."
-                                        explanation="Training on bidirectional context by hiding some tokens and forcing the model to guess what filled the gap."
-                                        example="Input: 'The cat sat on the [MASK].' -> Model predicts: 'mat' or 'rug'."
+                                        definition="Language models that learn by guessing hidden (masked) words in a sentence."
+                                        explanation="This teaches the model to read context from both directions to fill in missing words."
+                                        example="Input: 'The cat sat on the [MASK].' -> Model guesses: 'mat' or 'chair'."
                                         arabicTitle="نماذج اللغات المقنعة (MLMs)"
-                                        arabicContent="نماذج تتعلم عن طريق تخمين الكلمات المحذوفة عشوائياً والمغطاة بقناع [MASK] داخل الجملة. يدرب النموذج على قراءة السياق السابق واللاحق معاً لملء الفراغ بدقة عالية (وهي الطريقة الأساسية لتدريب طرازات BERT)."
+                                        arabicContent="نماذج تتعلم بتخمين كلمات مخفية عشوائياً [MASK] بالنظر للسياق قبلها وبعدها (الأسلوب المتبع لتدريب طرازات BERT)."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="10"
                                         name="Retrieval-Augmented Generation (RAG)"
-                                        definition="A framework that combines external document retrieval with text generation."
-                                        explanation="Before answering, the model looks up up-to-date facts in an external database, appending them to the prompt to reduce hallucinations."
-                                        example="A medicine chatbot retrieves the latest FDA clinical study files before generating a summary of drug side effects."
+                                        definition="A setup that lets an AI model look up facts in an external database before generating an answer."
+                                        explanation="Before responding, the model searches external files to get fresh, real-world facts, which reduces incorrect or made-up answers."
+                                        example="A medical chatbot searches the latest FDA guidelines before summarizing a drug's side effects."
                                         arabicTitle="التوليد المعزز بالاسترجاع (RAG)"
-                                        arabicContent="تقنية متطورة تدمج محركات البحث بقواعد البيانات مع النماذج اللغوية (LLMs). قبل إجابة المستخدم، يقوم النظام بالبحث عن أحدث المعلومات الموثوقة من مصادر خارجية وضمّها للطلب لضمان إجابة خالية من التزييف (Hallucination)."
+                                        arabicContent="تقنية تربط نماذج الذكاء الاصطناعي بقواعد بيانات خارجية للبحث عن معلومات موثوقة وجديدة قبل كتابة الرد لمنع تزييف الحقائق."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="11"
                                         name="Machine Translation (MT)"
-                                        definition="Automatically converting text or speech from one natural language to another."
-                                        explanation="Modern MT uses deep neural networks to preserve structural meaning and idiomatic patterns across languages."
-                                        example="Input: 'Bonjour.' -> Output: 'Hello.' / 'Das Haus' -> 'The house'."
+                                        definition="Automatically translating text or speech from one natural language to another."
+                                        explanation="Modern MT uses deep learning networks to keep the original style and meaning intact across different cultures."
+                                        example="Input: 'Bonjour' -> Output: 'Hello'."
                                         arabicTitle="الترجمة الآلية (Machine Translation)"
-                                        arabicContent="التحويل البرمجي للنصوص من لغة طبيعية إلى أخرى مع الحفاظ على البنية الدلالية والمصطلحات التعبيرية، وتعتمد حالياً على النماذج العصبية لضمان دقة الترجمة وسياقها الثقافي."
+                                        arabicContent="التحويل الآلي الفوري للنصوص من لغة إلى أخرى مع الحفاظ على صياغة وبنية المعنى دون استخدام القواميس الحرفية القديمة."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="12"
                                         name="RNNs and LSTMs"
-                                        definition="Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTMs) are architectures designed for sequence processing."
-                                        explanation="RNNs process sequences step-by-step, but suffer from forgetting early tokens (vanishing gradient). LSTMs resolve this using 'gates' to remember long-range dependencies."
-                                        example="Input: 'I am going to the...' -> predicts 'store' by keeping track of the preceding sequence context."
+                                        definition="Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTMs) are neural networks built to handle lists of data in order (sequences)."
+                                        explanation="RNNs read text word-by-word but often forget the beginning of long sentences. LSTMs solve this by using mathematical gates to remember long-term details."
+                                        example="Input: 'I live in France, so I speak...' -> LSTMs remember 'France' from earlier and guess 'French'."
                                         arabicTitle="الشبكات المتكررة وذاكرة المدى الطويل (RNNs & LSTMs)"
-                                        arabicContent="الشبكات العصبية المتكررة (RNN) مصممة لمعالجة المتتاليات (الجمل والزمن). وبسبب مشكلة نسيان المعلومات البعيدة، تم تطوير خلايا ذاكرة المدى الطويل (LSTM) التي تستخدم بوابات حسابية لتذكر الكلمات الهامة في بداية الجملة."
+                                        arabicContent="شبكات لمعالجة المتتاليات (كالجمل والزمن)؛ ولتفادي نسيان الألفاظ البعيدة طُوّرت خلايا الـ LSTM ببوابات حسابية للتذكر."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="13"
                                         name="Phonetics & Speech Feature Extraction"
-                                        definition="Phonetics studies speech sounds, and feature extraction converts audio signals into measurable numerical values."
-                                        explanation="Computers convert continuous sound waves into features like pitch, energy, and frequency spectrum arrays to analyze speech."
-                                        example="Saying 'cat' -> converted into wave frequency arrays representing /k/, /æ/, and /t/ sounds."
+                                        definition="Phonetics is the study of human speech sounds. Feature extraction turns sound waves into lists of numbers for computers to read."
+                                        explanation="Computers slice continuous audio into numbers representing pitch, energy, and voice frequencies."
+                                        example="Speaking the word 'cat' is converted into frequency graphs representing the sounds /k/, /æ/, and /t/."
                                         arabicTitle="علم الصوتيات واستخراج ميزات الكلام"
-                                        arabicContent="علم الصوتيات يدرس مخارج ومكونات الأصوات البشرية، بينما تعني تكنولوجيا استخراج الميزات تحويل الموجات الصوتية المستمرة إلى قيم رياضية دقيقة (مثل التردد وشدة الصوت) لتمكين البرامج من تحليل موجات الحروف ونطقها."
+                                        arabicContent="تحويل الموجات الصوتية البشرية إلى قيم وأرقام ترددية دقيقة تتيح للحاسوب تحليل الحروف والتعرف على مخارج الكلمات."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="14"
                                         name="Automatic Speech Recognition (ASR)"
-                                        definition="Technology that converts spoken human audio signals into written text."
-                                        explanation="ASR combines speech feature extraction with acoustic and language models to recognize and transcribe words from continuous audio."
-                                        example="Audio input of 'Hello' -> transcribes to the string characters 'H-e-l-l-o'."
+                                        definition="Technology that turns spoken voice recordings into written text."
+                                        explanation="It converts continuous voice waves into digital characters using sound waves and grammar rules."
+                                        example="Saying 'Hello' into a microphone -> computer types out 'Hello'."
                                         arabicTitle="التعرف التلقائي على الكلام (ASR)"
-                                        arabicContent="الأنظمة التقنية المسؤولة عن معالجة الإشارات الصوتية البشرية وتحويلها إلى كلمات مكتوبة ومقروءة (من صوت إلى نص) اعتماداً على نماذج صوتية مدربة."
+                                        arabicContent="الأنظمة المسؤولة عن تحويل الموجات الصوتية المنطوقة إلى نصوص مكتوبة (تحويل الصوت لكلام مكتوب)."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="15"
                                         name="Text-to-Speech (TTS)"
-                                        definition="Technology that synthesizes written text into spoken human voice."
-                                        explanation="Uses phonetic databases, spelling rules, and prosody (intonation, speed) to make generated speech sound natural."
-                                        example="Input string: 'Welcome' -> synthesized computer voice outputs the spoken word."
+                                        definition="Technology that reads written text aloud in a natural-sounding human voice."
+                                        explanation="It uses databases of speech sounds, grammar rules, and speech rhythm (prosody) to speak written words."
+                                        example="Input: 'Welcome home' -> computer speaker says 'Welcome home' in a friendly voice."
                                         arabicTitle="تحويل النصوص إلى كلام مسموع (TTS)"
-                                        arabicContent="تكنولوجيا تصنيع وتحويل الكلمات المكتوبة إلى صوت منطوق يحاكي نبرة وإيقاع الكلام البشري الطبيعي، متبعةً قواعد الصوتيات وعلامات الوقف والإيقاع."
+                                        arabicContent="تكنولوجيا تركيب الأصوات لتحويل الكلمات المكتوبة إلى صوت منطوق يحاكي إيقاع ونبرة الكلام البشري الطبيعي."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="16"
                                         name="Sequence Labeling"
-                                        definition="Assigning a categorical label (tag) to each token in a running sequence of text."
-                                        explanation="Used for POS tagging (labeling nouns, verbs, adjectives) and Named Entity Recognition (labeling persons, places)."
-                                        example="POS Tagging: 'Alice visited Paris' -> [Alice/NOUN, visited/VERB, Paris/NOUN]."
+                                        definition="Giving a category tag to every single word in a sentence."
+                                        explanation="This is used to label words as Nouns or Verbs, or to find important names (like people and places)."
+                                        example="POS Tagging: 'Alice visited Rome' -> [Alice/NOUN, visited/VERB, Rome/NOUN]."
                                         arabicTitle="تسمية وتصنيف المتتاليات (Sequence Labeling)"
-                                        arabicContent="عملية إعطاء تصنيف أو علامة محددة لكل كلمة في الجملة بشكل تتابعي؛ ومن أشهر تطبيقاتها وضع علامات أقسام الكلام (فعل، اسم، حرف) وتسمية الكيانات المسماة لمعرفة الأشخاص والبلدان المذكورة."
+                                        arabicContent="وضع تصنيف ووسم لكل كلمة في الجملة تتابعاً (مثل تصنيف أقسام الكلام أو تمييز الكيانات والبلدان)."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="17"
                                         name="Constituency Parsing"
-                                        definition="Analyzing sentence structures by breaking them into hierarchical phrasal constituents."
-                                        explanation="Uses Context-Free Grammars (CFGs) to identify how individual words group into larger phrases (Noun Phrases, Verb Phrases) that form the complete sentence."
-                                        example="CFG Parse: [S [NP The cat] [VP sat [PP on [NP the mat]]]]"
+                                        definition="Analyzing sentence structures by breaking them into nested phrasal constituents."
+                                        explanation="Uses grammar rules to show how individual words group into larger phrases (like Noun Phrases and Verb Phrases) to build a sentence tree."
+                                        example="Structure: [S [NP The dog] [VP barked]]"
                                         arabicTitle="إعراب المكونات الهيكلية (Constituency Parsing)"
-                                        arabicContent="طريقة لتشريح الجمل بالاعتماد على قواعد خالية من السياق (CFG)، حيث تقسم الجملة إلى مجموعات هرمية متداخلة (مثل عبارة اسمية متبوعة بعبارة فعلية) وتوضيح علاقتها بشجرة إعرابية متفرعة."
+                                        arabicContent="تشريح وتجميع الكلمات في عبارات هرمية كبرى (اسمية وفعلية) وتوضيح علاقتها بشجرة إعرابية متداخلة."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="18"
                                         name="Dependency Parsing"
-                                        definition="Analyzing sentence structure by mapping binary, directed relationships between words."
+                                        definition="Analyzing sentence structure by mapping direct grammatical connections between individual words."
                                         explanation="Instead of grouping words into phrase brackets, it identifies which head words are modified or complemented by dependent words."
-                                        example="Dependencies: sat -> subject (cat), sat -> object (mat)."
+                                        example="Relationships: barked -> subject (dog)."
                                         arabicTitle="الإعراب التبعي (Dependency Parsing)"
-                                        arabicContent="تحليل تركيب الجملة برسم روابط ثنائية وموجهة بين الكلمات مباشرة؛ لتحديد الكلمة الرأس (Head) والكلمات التابعة لها (Dependent) التي تكمل معناها (مثل توضيح أن القطة تابعة للفعل جلس كفاعل)."
+                                        arabicContent="تحليل الجمل برسم روابط موجهة ومباشرة بين الكلمات لتحديد الكلمة الرأس (Head) والكلمة التابعة لها دون تجميع عبارات."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="19"
                                         name="Information Extraction (IE)"
-                                        definition="Identifying and extracting structured information (relations, events, times) from unstructured text."
-                                        explanation="Focuses on extracting semantic relations (connections between entities), events (specific actions), and time expressions."
-                                        example="Sentence: 'Alice joined Microsoft in 2020.' -> Relation: Alice (Employee) -> Microsoft (Employer); Event: Joining; Time: 2020."
+                                        definition="Finding and pulling structured information (like events, dates, and connections) out of messy, raw text."
+                                        explanation="It extracts clear facts (who, what, when, where) to fill out databases automatically."
+                                        example="Text: 'Alice joined SAP in 2020' -> Relation: Employee (Alice) -> Employer (SAP) in Year: 2020."
                                         arabicTitle="استخراج المعلومات المهيكلة (Information Extraction)"
-                                        arabicContent="عملية فحص النصوص العشوائية واستخراج بيانات منظمة ومفهرسة منها (مثل استخراج فاعل الفعل، الحدث ذاته، والزمن المرتبط به) مثل تحويل نص تعيين موظف إلى قاعدة بيانات رسمية."
+                                        arabicContent="فحص النصوص العادية واستخراج معلومات منظمة ومفهرسة منها (مثل استخراج الأسماء والوظائف والتواريخ وحفظها)."
                                         themeColor="purple"
                                     />
 
@@ -1133,54 +1103,54 @@
                                         index="20"
                                         name="Semantic Role Labeling (SRL)"
                                         definition="Assigning semantic roles to words or phrases in a sentence based on their relationship to a verb."
-                                        explanation="Identifies 'who did what to whom' by tagging words with roles like Agent (actor), Theme (object), or Recipient."
-                                        example="Sentence: 'John gave Mary a book.' -> John = Agent, Mary = Recipient, Book = Theme."
+                                        explanation="It identifies 'who did what to whom' by tagging words with roles like Agent (the actor), Theme (the object), or Recipient (the receiver)."
+                                        example="Sentence: 'John gave Mary a book' -> John = Agent, Mary = Recipient, book = Theme."
                                         arabicTitle="تحديد الأدوار الدلالية (Semantic Role Labeling)"
-                                        arabicContent="تحديد الأدوار الفكرية والعملية للكلمات حول الفعل الأساسي لمعرفة (من فعل ماذا ولمن) وتسميتها بأدوار دقيقة مثل الفاعل المؤثر (Agent)، المتلقي (Recipient)، والشيء المتأثر بالفعل (Theme)."
+                                        arabicContent="تحديد الأدوار الفكرية والعملية للكلمات حول الفعل الأساسي لمعرفة (من فعل ماذا ولمن) وتسمية الفاعل والمستقبل."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="21"
                                         name="Lexicons"
-                                        definition="Predefined dictionaries containing lists of words mapped to specific emotional or semantic scores."
-                                        explanation="Used in sentiment analysis to evaluate text based on positive or negative word connotation scores."
-                                        example="Word 'happy' -> mapped to Positive (+1.0) / 'broken' -> mapped to Negative (-1.0)."
+                                        definition="Pre-made dictionaries containing lists of words mapped to emotional or semantic scores."
+                                        explanation="Used in sentiment analysis to score if a text is happy or sad by adding up word connotation points."
+                                        example="Word: 'happy' -> mapped to Positive (+1.0). Word: 'sad' -> mapped to Negative (-1.0)."
                                         arabicTitle="القواميس الدلالية وتحليل النبرة (Lexicons)"
-                                        arabicContent="ذخائر وقواميس جاهزة للكلمات ومرفق مع كل كلمة تقييمها العاطفي أو الدلالي (مثل ربط كلمة 'سعيد' بـ +1 وكلمة 'غاضب' بـ -1) لتسهيل حساب مشاعر النصوص آلياً."
+                                        arabicContent="قواميس وذخائر جاهزة مرفق مع كل كلمة تقييمها العاطفي والدلالي لتسهيل حساب مشاعر النصوص آلياً."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="22"
                                         name="Coreference Resolution & Entity Linking"
-                                        definition="Coreference Resolution identifies when different words refer to the same entity; Entity Linking connects named entities to real-world knowledge bases."
-                                        explanation="Ensures computers understand pronoun references ('She' refers to 'Alice') and link names like 'Paris' to the correct geographical coordinate database."
-                                        example="Sentence: 'Alice went to Paris. She loved it.' -> 'She' = Alice. 'it' = Paris."
+                                        definition="Coreference Resolution finds when different words refer to the same thing. Entity Linking connects names to real-world information databases."
+                                        explanation="It helps computers understand that 'He' means 'Robert' in a story, and links 'Paris' to the correct city on a map."
+                                        example="Text: 'Robert went home. He was tired.' -> 'He' = Robert."
                                         arabicTitle="حل الإحالات المشتركة وربط الكيانات"
-                                        arabicContent="حل الإحالات (Coreference) يربط الضمائر بأسمائها الصريحة (مثل تحديد أن الضمير 'هي' يعود على 'أليس'). ربط الكيانات (Entity Linking) يربط الكلمة بمدخلها الصحيح في موسوعات الويب كويكيبيديا لتمييز المدن المتشابهة."
+                                        arabicContent="ربط الضمائر بأسمائها الصريحة (مثل ربط 'هو' بـ 'روبرت')، وربط الكلمات بمدخلها الصحيح في الموسوعات مثل ويكيبيديا."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="23"
                                         name="Discourse Coherence"
-                                        definition="The logical connection and transition of ideas and sentences across a text."
-                                        explanation="Ensures that sentences flow smoothly and make collective sense together, rather than being a random sequence of unrelated thoughts."
-                                        example="Coherent: 'I was hungry. I went to a diner.' Incoherent: 'I was hungry. The sky is blue.'"
+                                        definition="How logically sentences connect and flow together in a text."
+                                        explanation="It ensures sentences follow a logical order, making collective sense instead of being random thoughts."
+                                        example="Coherent: 'I was hungry. I ate pizza.' Incoherent: 'I was hungry. Pluto is far away.'"
                                         arabicTitle="ترابط وتماسك الخطاب النصي (Discourse Coherence)"
-                                        arabicContent="دراسة العلاقات والروابط المنطقية بين الجمل والفقرات لضمان تدفق المعنى والترابط الفكري للموضوع بالكامل ومنع التشتت وعشوائية الجمل المتجاورة."
+                                        arabicContent="دراسة العلاقات والروابط المنطقية والزمنية بين الجمل والفقرات لضمان تدفق المعنى ووضوح الفكرة ومنع التشتت."
                                         themeColor="purple"
                                     />
 
                                     <TermCard 
                                         index="24"
                                         name="Conversation and its Structure"
-                                        definition="The linguistic study of dialogue flow, turn-taking, and speech acts in human interaction."
-                                        explanation="Focuses on turn-taking rules, topic management, and speech acts (questions, responses, requests) to build effective conversational agents."
-                                        example="Greeting ('How are you?') -> Response ('I am fine, thank you.')"
+                                        definition="The study of dialogue rules, turn-taking, and speech acts in conversation."
+                                        explanation="It looks at how people take turns talking, change topics, and ask/answer questions to build smart talking bots."
+                                        example="Turn 1: 'Hello!' -> Turn 2: 'Hi there!'"
                                         arabicTitle="هيكل وتحليل المحادثات (Conversation Structure)"
-                                        arabicContent="دراسة نظام تبادل الأدوار بين المتحدثين وإدارة موضوع الحوار وعلامات الترحيب والرد لبرمجة روبوتات محادثة (Chatbots) قادرة على محاكاة الكلام الإنساني التفاعلي."
+                                        arabicContent="دراسة القوانين التي تحكم تبادل الأدوار وإدارة الحوار وعلامات الترحيب لبرمجة روبوتات محادثة تفاعلية طبيعية."
                                         themeColor="purple"
                                     />
                                 </div>
@@ -1202,7 +1172,7 @@
                                     <div className="md:w-3/4 text-center md:text-left space-y-1">
                                         <h2 className="text-xl font-black text-slate-900">Computational Linguistics Exam Hub</h2>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            An interactive, self-scoring simulator of 15 practice questions along with comprehensive blueprints for essay responses.
+                                            An interactive simulator with practice questions and easy-to-memorize blueprints for writing your essay answers.
                                         </p>
                                     </div>
                                 </div>
@@ -1214,7 +1184,7 @@
                                             <HelpCircle className="text-indigo-600" size={20} /> Self-Scoring Exam Simulator
                                         </h3>
                                         {showResults ? (
-                                            <button onClick={resetQuiz} className="text-xs bg-indigo-650 bg-indigo-600 hover:bg-indigo-700 text-white font-black px-4 py-2 rounded-xl transition-all shadow-sm">
+                                            <button onClick={resetQuiz} className="text-xs bg-indigo-600 hover:bg-indigo-700 text-white font-black px-4 py-2 rounded-xl transition-all shadow-sm">
                                                 Retake Quiz
                                             </button>
                                         ) : (
@@ -1232,7 +1202,7 @@
                                             <div>
                                                 <h4 className="font-bold text-indigo-900">Grading System Output</h4>
                                                 <p className="text-indigo-700 text-xs">
-                                                    {score >= 12 ? "Excellent! You have fully mastered Computational Linguistics." : "Review the correct answers and rationales below to reinforce your understanding."}
+                                                    {score >= 12 ? "Excellent! You have fully mastered Computational Linguistics." : "Review the correct answers and explanations below to memorize the concepts."}
                                                 </p>
                                             </div>
                                         </div>
@@ -1251,14 +1221,14 @@
                                                         let btnStyle = "border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700";
                                                         
                                                         if (isSelected) {
-                                                            btnStyle = "border-slate-800 bg-slate-850 bg-slate-800 text-white";
+                                                            btnStyle = "border-slate-800 bg-slate-800 text-white";
                                                         }
                                                         if (showResults) {
                                                             if (isCorrect) {
                                                                 btnStyle = "border-emerald-500 bg-emerald-500 text-white";
                                                             } else if (isSelected) {
                                                                 btnStyle = "border-rose-500 bg-rose-500 text-white";
-                                                             } else {
+                                                            } else {
                                                                 btnStyle = "border-slate-100 bg-slate-50/50 text-slate-400";
                                                             }
                                                         }
@@ -1279,7 +1249,7 @@
                                                 </div>
                                                 {showResults && (
                                                     <p className="text-xs text-slate-600 italic bg-slate-50 p-2.5 rounded-lg border border-slate-150 pl-3">
-                                                        <strong>Rationale:</strong> {q.explanation}
+                                                        <strong>Explanation:</strong> {q.explanation}
                                                     </p>
                                                 )}
                                             </div>
@@ -1287,62 +1257,181 @@
                                     </div>
                                 </div>
 
-                                {/* Premium Essay Outlines */}
+                                {/* Premium Essay Outlines (Updated Q&A Section) */}
                                 <div className="space-y-4 pt-6 border-t border-slate-200">
-                                    <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                                        <Feather className="text-indigo-600" size={20} /> Key Essay Response Blueprints
+                                    <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2 mb-4">
+                                        <Feather className="text-indigo-600" size={20} /> Paragraph Essay Blueprints
                                     </h3>
 
                                     <EssayCard 
-                                        question="Q1. Why is natural language processing (NLP) uniquely difficult for machines? Discuss ambiguity and the human symbolic system."
+                                        question="Q1. Define Computational Linguistics."
                                         answer={
-                                            <div className="space-y-2">
-                                                <p><strong>1. Generative Infinity:</strong> Humans can combine a finite set of words into an infinite variety of sentence structures, meaning models can always encounter entirely novel structures.</p>
-                                                <p><strong>2. Chris Manning's Paradox:</strong> Language is a discrete, symbolic, and categorical system at the conceptual level, but in the human brain, these symbols are represented as continuous patterns and transmitted through continuous waves (sound and light).</p>
-                                                <p><strong>3. Deep Ambiguity:</strong> Words have multiple meanings (polysemy), and sentences are structurally ambiguous. For example, the headline *"The Pope's baby steps on gays"* highlights how a lack of real-world context and worldly intuition makes syntactic resolution extremely difficult for computers.</p>
+                                            <div className="space-y-3 text-[14px]">
+                                                <p><strong>Computational linguistics</strong> is a mixed field combining linguistics, computer science, artificial intelligence, and cognitive science. It aims to answer how computers can process human language and how technology can help humans study linguistic rules.</p>
+                                                <p>The field operates on two main dimensions. The <strong>Theoretical dimension</strong> focuses on building mathematical models of language grammar and meaning. The <strong>Applied dimension (NLP)</strong> uses these models to build real-world tools, like machine translation and search engines.</p>
+                                                <p>Historically, the field started with <strong>rule-based systems</strong> relying on strict, hand-written grammar rules. Today, it is dominated by <strong>data-driven approaches</strong>, which use machine learning and large text databases to let computers learn language patterns automatically.</p>
                                             </div>
                                         }
-                                        arabicKey="إجابة سؤال صعوبة معالجة اللغة الطبيعية: تتمثل في اللانهاية الإنتاجية للجمل، وتناقض الرموز المستمر في عقل الإنسان والمنفصل حاسوبياً لـ مانينغ، بالإضافة إلى الغموض السياقي والدلالي مثل التفسير الخاطئ لعنوان طفل البابا الذي يتطلب وعياً بالواقع الحقيقي خارج نطاق الكلمات."
+                                        arabicKey="اللغويات الحاسوبية تجمع بين علوم اللغة والحاسوب والذكاء الاصطناعي لمعالجة لغة البشر. تنقسم لجانب نظري (بناء نماذج لغوية رياضية) وجانب تطبيقي (تطوير أدوات كالمترجم الآلي). انتقل المجال من الأنظمة القائمة على القواعد اليدوية إلى الأنظمة الحديثة المعتمدة على البيانات والتعلم الآلي."
                                         themeColor="indigo"
                                     />
 
                                     <EssayCard 
-                                        question="Q2. Compare and contrast Syntactic Analysis (Syntax) and Semantic Analysis (Semantics), using the example 'cows flow supremely'."
+                                        question="Q2. What is meant by cognitive science?"
                                         answer={
-                                            <div className="space-y-2">
-                                                <p><strong>Syntactic Analysis (Syntax):</strong> Evaluates the grammatical structure of text using explicit structural rules. The sentence *"cows flow supremely"* is perfectly valid syntactically because it matches the structural template of [Noun Phrase (Subject) + Verb (Predicate) + Adverb (Modifier)].</p>
-                                                <p><strong>Semantic Analysis (Semantics):</strong> Evaluates the logical meaning, truth conditions, and relationship between the words. Even though the sentence is grammatically correct, it is semantically invalid (makes no sense) because cows are solid mammals and cannot fluidly 'flow.'</p>
-                                                <p><strong>NLU Implication:</strong> Speech recognition systems often succeed at syntactic transcription while failing at semantic understanding, proving semantics is a much harder, unresolved problem.</p>
+                                            <div className="space-y-3 text-[14px]">
+                                                <p><strong>Cognitive science</strong> is the scientific study of the mind and its complex processes, including memory, problem-solving, attention, and language acquisition.</p>
+                                                <p>In computational linguistics, cognitive science provides the crucial <strong>"human dimension."</strong> It helps developers understand how people naturally learn and process language in their brains.</p>
+                                                <p>By studying psycholinguistic data, researchers can build AI systems that do not just process data, but truly <strong>comprehend language like a human mind does</strong>—handling ambiguity, reading context, and inferring the speaker's true intent.</p>
                                             </div>
                                         }
-                                        arabicKey="مقارنة بين التحليل النحوي والدلالي باستخدام مثال cows flow supremly: الجملة صحيحة نحوياً لتطابق هيكلها مع القواعد الإنجليزية، لكنها دلالياً بلا معنى لاستحالة تدفق وجريان الأبقار الصلبة كالماء. هذا يوضح لماذا يسهل على البرامج نسخ الكلمات بينما يصعب عليها فهم المقصود."
+                                        arabicKey="العلوم المعرفية تدرس العقل البشري وعملياته كالذاكرة وحل المشكلات. في اللغويات، هي توفر البعد الإنساني لتطوير أنظمة حاسوبية تفهم اللغة، تتعامل مع الغموض، وتستوعب المقاصد تماماً كما يفعل العقل البشري طبيعياً."
                                         themeColor="indigo"
                                     />
 
                                     <EssayCard 
-                                        question="Q3. Deeply explain the difference between the three major transformer architectures: BERT, GPT, and T5."
+                                        question="Q3. What are the main conclusions of Computational Linguistics?"
                                         answer={
-                                            <div className="space-y-2">
-                                                <p><strong>1. BERT (Language Understanding):</strong> Reads context bidirectionally (both left and right simultaneously). Excels at classification, sentiment analysis, and context-dependent tasks (e.g. understanding 'river bank' vs 'financial bank').</p>
-                                                <p><strong>2. GPT (Language Generation):</strong> Reads context from left to right (autoregressive next-word prediction). Excels at creative writing, dialogue, and text generation.</p>
-                                                <p><strong>3. T5 (Unified Text-to-Text):</strong> Converts all NLP tasks into a single text-to-text format. Flexible enough to handle translation, summarization, and classification in the same model structure.</p>
+                                            <div className="space-y-3 text-[14px]">
+                                                <p>The field rests on three core conclusions: Automatic Natural Language Processing (NLP) is <strong>necessary</strong>, it is <strong>very difficult</strong>, and it is <strong>possible</strong>.</p>
+                                                <p>It is <strong>necessary</strong> because humans produce too much text daily to process manually. It is <strong>difficult</strong> because human language is highly ambiguous, unstructured, and relies on shared real-world experience that computers lack.</p>
+                                                <p>However, it is <strong>possible</strong> thanks to the massive power of modern computers and strong formal linguistic models. Furthermore, the field proves that having a deep theoretical knowledge of linguistics is just as vital as having good programming skills.</p>
                                             </div>
                                         }
-                                        arabicKey="الفرق بين نماذج المحولات الكبرى: بيرت (BERT) مصمم للفهم الثنائي للجهات لدقة الكلمات المشتركة، وجي بي تي (GPT) مصمم للتوليد والكتابة بالتنبؤ بالكلمة التالية من اليسار لليمين، وتي فايف (T5) نموذج مرن يعالج كافة المهام كنص مدخل ونص مخرج."
+                                        arabicKey="استنتاجات اللغويات الحاسوبية الثلاثة: المعالجة الآلية 'ضرورية' لكثرة النصوص المنتجة، و'صعبة' لغموض لغة البشر واعتمادها على سياق الواقع، و'ممكنة' بفضل الحواسيب القوية. وتؤكد أن فهم القواعد اللغوية لا يقل أهمية عن البرمجة."
                                         themeColor="indigo"
                                     />
 
                                     <EssayCard 
-                                        question="Q4. Discuss the difference between Constituency Parsing and Dependency Parsing with visual examples."
+                                        question="Q4. What are the main applications of Computational Linguistics?"
                                         answer={
-                                            <div className="space-y-2">
-                                                <p><strong>Constituency Parsing:</strong> Focuses on grouping words into hierarchical phrasal structures (constituents) based on Context-Free Grammars (CFGs). Brackets words together into Noun Phrases (NP) and Verb Phrases (VP) underneath the root sentence node (S).</p>
-                                                <p><strong>Dependency Parsing:</strong> Focuses on direct, binary, directed grammatical relationships between individual words. Instead of grouping phrases, it connects dependent words to their semantic head words (e.g., sat $\rightarrow$ subject (cat), sat $\rightarrow$ object (mat)).</p>
+                                            <div className="space-y-3 text-[14px]">
+                                                <p>Computational linguistics powers ten major real-world technologies that we use every day. Key applications include <strong>Machine Translation</strong> (like Google Translate) and <strong>Speech Recognition & Synthesis</strong> (like Siri converting speech to text).</p>
+                                                <p>In the business world, it drives <strong>Sentiment Analysis</strong> (reading customer emotions in reviews), <strong>Information Retrieval</strong> (smart search engines), and intelligent <strong>Chatbots</strong> for automated customer service.</p>
+                                                <p>It also provides the brains for <strong>Text Summarization</strong>, <strong>Language Learning Apps</strong> (like Duolingo), and <strong>Forensic Linguistics</strong>, which analyzes writing styles to track cybercriminals and detect plagiarism.</p>
                                             </div>
                                         }
-                                        arabicKey="الفرق بين إعراب المكونات (Constituency) والإعراب التبعي (Dependency): الإعراب الهيكلي يجمع الكلمات في عبارات هرمية كبرى (NP و VP)، بينما الإعراب التبعي يرسم روابط مباشرة ثنائية موجهة بين الكلمات لمعرفة التابع والمتبوع مباشرة دون تجميع عبارات."
+                                        arabicKey="للتطبيقات ١٠ مجالات أساسية أبرزها: الترجمة الآلية، التعرف على الصوت وتخليقه (مثل سيري)، تحليل المشاعر (قراءة آراء العملاء)، محركات البحث، الروبوتات الحوارية (Chatbots)، التلخيص الآلي، وتطبيقات تعلم اللغات مثل دولينجو."
                                         themeColor="indigo"
                                     />
+
+                                    <EssayCard 
+                                        question="Q5. What is Natural Language Processing?"
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p><strong>Natural Language Processing (NLP)</strong> is the applied branch of computer science and AI focused on helping computers interact with humans using everyday natural language.</p>
+                                                <p>The field is divided into three main operational layers: <strong>Speech Recognition</strong> (translating voice to text), <strong>Natural Language Understanding (NLU)</strong> (figuring out context and intent), and <strong>Natural Language Generation (NLG)</strong> (writing text that sounds human).</p>
+                                                <p>By combining linguistic rules with advanced machine learning, NLP serves as the driving engine behind modern digital tools like virtual assistants, text summarizers, and instant translation software.</p>
+                                            </div>
+                                        }
+                                        arabicKey="معالجة اللغة الطبيعية (NLP) هي فرع من الذكاء الاصطناعي يُمكن الحواسيب من التفاعل باللغة البشرية. وتشمل التعرف على الصوت، فهم المقاصد (NLU)، وتوليد النصوص المكتوبة (NLG) لتشغيل المساعدين الافتراضيين والمترجمات."
+                                        themeColor="indigo"
+                                    />
+
+                                    <EssayCard 
+                                        question="Q6. Why is Natural Language Processing difficult?"
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p>NLP is uniquely difficult because language is a system designed by humans, for humans, relying heavily on <strong>shared real-world common sense</strong> which computers lack.</p>
+                                                <p>As linguist Chris Manning notes, language consists of distinct symbols (words) that our brains process as continuous physical signals. This creates a massive challenge: humans can invent an <strong>infinite variety of sentences</strong>, meaning a computer is always reading structures it has never seen before.</p>
+                                                <p>Furthermore, words often have multiple, completely different meanings depending on their context (<strong>Lexical and Structural Ambiguity</strong>). For example, the headline "The Pope's baby steps on gays" can easily be misinterpreted by a machine lacking human logic.</p>
+                                            </div>
+                                        }
+                                        arabicKey="صعوبة NLP تكمن في أن لغة البشر لا نهائية التركيب ومليئة بالغموض وتعدد المعاني (مثل اختلاف معنى الكلمة حسب السياق)، وتعتمد على الفهم المشترك للواقع. الكلمات رموز منفصلة لكن العقل يعالجها كإشارات مستمرة، مما يربك الحواسيب."
+                                        themeColor="indigo"
+                                    />
+
+                                    <EssayCard 
+                                        question="Q7. What is NLP used for?"
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p>NLP is used across almost every industry to automate and improve human-computer interactions. In <strong>Customer Service</strong>, it powers the chatbots and virtual assistants that handle client complaints 24/7.</p>
+                                                <p>In <strong>Marketing and HR</strong>, NLP algorithms analyze consumer sentiment from social media posts and quickly scan thousands of resumes to find the best job candidates based on keywords.</p>
+                                                <p>It is also heavily utilized in <strong>Healthcare</strong> to automatically transcribe complex doctor notes, in <strong>Finance</strong> to predict stock trends by reading the news, and in <strong>Cybersecurity</strong> to filter out spam and detect phishing threats.</p>
+                                            </div>
+                                        }
+                                        arabicKey="تُستخدم تقنيات NLP في خدمة العملاء (الروبوتات الحوارية)، التسويق (تحليل آراء المستهلكين)، الموارد البشرية (الفرز الآلي للسير الذاتية)، الرعاية الصحية (تفريغ ملاحظات الأطباء)، التمويل (التنبؤ بالأسهم)، والأمن السيبراني."
+                                        themeColor="indigo"
+                                    />
+
+                                    <EssayCard 
+                                        question="Q8. How does NLP work?"
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p>NLP works in overlapping layers to analyze text and generate the perfect response. First, it uses <strong>Syntactic Analysis (Parsing)</strong> to break sentences down into a grammatical skeleton or "parse tree," mapping out the nouns and verbs.</p>
+                                                <p>Second, it attempts <strong>Semantic Analysis</strong> to understand the actual meaning, tone, and context of those words—which remains one of the hardest challenges in computer science.</p>
+                                                <p>To accomplish this, modern NLP relies heavily on <strong>Deep Learning and Word Embeddings</strong>. These systems convert words into mathematical numbers (vectors) in a continuous space, allowing the computer to mathematically process relationships, sentences, and translations.</p>
+                                            </div>
+                                        }
+                                        arabicKey="تعمل NLP عبر طبقات متتالية: 'التحليل النحوي' لتفكيك الجملة ومعرفة الهيكل الإعرابي، ثم 'التحليل الدلالي' لفهم المعنى والسياق. وتعتمد حديثاً على 'التعلم العميق' الذي يحول الكلمات لأرقام لمعالجتها وفهمها رياضياً."
+                                        themeColor="indigo"
+                                    />
+
+                                    <EssayCard 
+                                        question="Q9. Summarize the Key Terms of Computational Linguistics."
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p><strong>Core Elements:</strong> In computational text processing, a <strong>Word</strong> is a basic meaningful unit, while a <strong>Token</strong> is a sliced text piece created specifically for computer scanning. Systems use <strong>N-gram Models</strong> to predict the next word based on previous sequences.</p>
+                                                <p><strong>Advanced AI Tools:</strong> To understand meaning, computers use <strong>Embeddings</strong>, which convert words into lists of numbers. Modern systems process these numbers using <strong>Neural Networks</strong> and <strong>Transformers</strong> (like BERT and GPT), which can read entire sentences at once to grasp context, powering <strong>Large Language Models (LLMs)</strong>.</p>
+                                                <p><strong>Processing Tasks:</strong> NLP pipelines rely on <strong>Machine Translation (MT)</strong> and <strong>Automatic Speech Recognition (ASR)</strong> to process communication. To understand sentences logically, computers use <strong>Parsing</strong> to map grammar trees, and <strong>Semantic Role Labeling (SRL)</strong> to figure out exactly "who did what to whom."</p>
+                                            </div>
+                                        }
+                                        arabicKey="ملخص المصطلحات: Tokenization لتقطيع النص، Embeddings لتحويل الكلمات لأرقام، Transformers كشبكات عصبية لفهم السياق جملة واحدة، و Parsing للإعراب وتحديد هيكل الجملة، و SRL لمعرفة من الفاعل وماذا فعل."
+                                        themeColor="indigo"
+                                    />
+
+                                    <EssayCard 
+                                        question="Q10. Write a detailed account on linguistics and its structure."
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p><strong>Linguistics</strong> is the scientific study of natural language, centered around <strong>General Linguistics</strong>. This core nucleus is broken into four main layers: <strong>Phonology</strong> (the study of sounds), <strong>Morphology</strong> (internal word structure), <strong>Syntax</strong> (sentence layout and grammar), and <strong>Semantics/Pragmatics</strong> (word meanings and real-world context).</p>
+                                                <p>Beyond the core, linguistics expands into several specialized branches. <strong>Historical Linguistics</strong> studies how languages evolve and share family trees, while <strong>Typology</strong> groups different languages based on shared grammatical features. <strong>Sociolinguistics</strong> examines how social class and region change the way people speak.</p>
+                                                <p>Finally, <strong>Applied and Computational Linguistics</strong> take these theoretical laws and use them to solve real-world problems, such as building digital dictionaries (Lexicography) or teaching computers to process human language.</p>
+                                            </div>
+                                        }
+                                        arabicKey="علم اللغويات يدرس اللغات الطبيعية. مركزه 'اللغويات العامة' وينقسم إلى (أصوات، صرف، نحو، ودلالة). وتتفرع منه اللغويات التاريخية (تطور اللغات)، ولغويات التناظر (مقارنة القواعد)، وعلم اللغة الاجتماعي، واللغويات الحاسوبية التطبيقية."
+                                        themeColor="indigo"
+                                    />
+
+                                    <EssayCard 
+                                        question="Q11. Word, what is it? Explain the concept of Lexemes."
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p>The concept of a 'word' is too vague for computer science, so computational linguistics divides it into <strong>three precise levels</strong> to analyze text accurately.</p>
+                                                <p>First, a <strong>Word Occurrence</strong> is simply any string of letters sitting in a specific spot in a text; every single time a word is typed, it counts as a new occurrence. Second, a <strong>Wordform</strong> refers to the exact physical spelling of the word, completely ignoring where it is placed in the sentence.</p>
+                                                <p>Finally, a <strong>Lexeme</strong> is the abstract base family that groups all spelling variations of a word under one core dictionary meaning (for example, 'book' and 'books' belong to the same Lexeme). This distinction is vital because it allows computers to save massive amounts of storage space by treating variations as a single root concept.</p>
+                                            </div>
+                                        }
+                                        arabicKey="لتفادي الغموض، تُقسم الكلمة إلى 3 مستويات: 'الحدث' (موقعها وتكرارها المستقل)، 'الصيغة' (شكلها الإملائي المجرد)، و'الكلمة المعجمية / Lexeme' (الجذر الأساسي الذي يجمع كل الصيغ كعائلة واحدة لتوفير مساحة التخزين الحاسوبية)."
+                                        themeColor="indigo"
+                                    />
+
+                                    <EssayCard 
+                                        question="Q12. What is the role of NLP?"
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p>The primary role of NLP is to help humans manage and understand the <strong>massive amount of text</strong> produced daily in the Information Age.</p>
+                                                <p>Instead of computers just storing files, NLP allows machines to actively <strong>read, proofread, summarize, and execute instructions</strong> from raw text. It bridges the gap between human communication (which is messy and contextual) and digital machines (which require strict logic).</p>
+                                                <p>Ultimately, NLP extends our intellectual reach by automating tedious reading and data-gathering tasks, thereby leaving only the final, high-level decision-making to human professionals.</p>
+                                            </div>
+                                        }
+                                        arabicKey="دور NLP هو مساعدة البشر في التعامل مع الكم الهائل من النصوص الرقمية. فهي لا تخزن الملفات فقط، بل تقرأ، تلخص، تصحح، وتنفذ الأوامر آلياً، لتكون جسراً بين البشر والآلة، وتترك مهام اتخاذ القرار النهائي للبشر."
+                                        themeColor="indigo"
+                                    />
+
+                                    <EssayCard 
+                                        question="Q13. What is the necessity for intelligent automatic text processing?"
+                                        answer={
+                                            <div className="space-y-3 text-[14px]">
+                                                <p>Intelligent text processing is absolutely necessary today for two main reasons: <strong>Human Limitations</strong> and <strong>Information Overload</strong>.</p>
+                                                <p>First, millions of workers lack the time or education to perfectly apply formal language rules in every document they write. It is practically <strong>cheaper and faster to teach a machine</strong> to correct grammar and style consistently than to perfectly train every human.</p>
+                                                <p>Second, modern professionals must analyze thousands of documents, reviews, and reports daily. Reading this manually would take a lifetime. Using computer assistance is the <strong>only possible way</strong> to instantly find, synthesize, and extract crucial information from mountains of text.</p>
+                                            </div>
+                                        }
+                                        arabicKey="الحاجة للمعالجة الآلية تنبع من: أولاً 'القصور البشري' (صعوبة تطبيق كل قواعد اللغة يدوياً فمن الأرخص تعليم الآلة للقيام بذلك دائماً)، وثانياً 'الانفجار المعرفي' (يستحيل على البشر قراءة آلاف المستندات يومياً، فالآلة هي الحل الوحيد للاستخراج السريع)."
+                                        themeColor="indigo"
+                                    />
+
                                 </div>
                             </div>
                         )}
